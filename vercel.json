@@ -1,15 +1,13 @@
 {
   "version": 2,
+  "buildCommand": "node build.js",
+  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/videos/([a-zA-Z0-9-]+)",
-      "dest": "/video.html?id=$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/videos/:id",
+      "destination": "/video.html?id=:id"
     }
   ]
 }

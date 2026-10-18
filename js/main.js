@@ -237,7 +237,7 @@ function injectVideoSchema(video) {
           "name": "Le Grand Génie de la Création",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://legrandgeniedelacreation.com/assets/images/jean-yves-portrait.jpg"
+            "url": "https://legrandgeniedelacreation.com/public/images/jean-yves-portrait.jpg"
           }
         },
         "image": `https://legrandgeniedelacreation.com/${video.thumbnail}`

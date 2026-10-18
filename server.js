@@ -3,16 +3,17 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 3000;
-const PUBLIC_DIR = __dirname;
+const ROOT_DIR = __dirname;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=UTF-8',
   '.css': 'text/css; charset=UTF-8',
   '.js': 'application/javascript; charset=UTF-8',
-  '.json': 'application/json',
+  '.json': 'application/json; charset=UTF-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.xml': 'application/xml',
   '.txt': 'text/plain'
@@ -21,14 +22,27 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
   if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
+
+  // Support des URLs réécrites comme sur Vercel (/videos/slug -> /video.html)
+  if (reqPath.startsWith('/videos/') && !reqPath.includes('.')) {
+    reqPath = '/video.html';
+  }
   
-  const filePath = path.join(PUBLIC_DIR, reqPath);
+  let filePath = path.join(ROOT_DIR, reqPath);
 
   // Sécurité traversée de dossier
-  if (!filePath.startsWith(PUBLIC_DIR)) {
+  if (!filePath.startsWith(ROOT_DIR)) {
     res.writeHead(403);
     res.end('Accès interdit');
     return;
+  }
+
+  // Fallback si cherché dans public/ ou assets/
+  if (!fs.existsSync(filePath)) {
+    const publicCandidate = path.join(ROOT_DIR, 'public', reqPath);
+    if (fs.existsSync(publicCandidate) && fs.statSync(publicCandidate).isFile()) {
+      filePath = publicCandidate;
+    }
   }
 
   fs.stat(filePath, (err, stats) => {
@@ -41,7 +55,10 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
-    res.writeHead(200, { 'Content-Type': contentType });
+    res.writeHead(200, { 
+      'Content-Type': contentType,
+      'Cache-Control': 'no-cache'
+    });
     fs.createReadStream(filePath).pipe(res);
   });
 });
