@@ -1,0 +1,5 @@
+# robots.txt pour Le Grand Génie de la Création
+User-agent: *
+Allow: /
+
+Sitemap: https://legrandgeniedelacreation.com/sitemap.xml

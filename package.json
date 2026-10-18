@@ -1,0 +1,17 @@
+{
+  "name": "le-grand-genie-de-la-creation",
+  "version": "1.0.0",
+  "description": "Site vitrine officiel de la chaîne Le Grand Génie de la Création",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "science",
+    "cosmologie",
+    "adn",
+    "dessein-intelligent",
+    "physique"
+  ],
+  "author": "Jean-Yves",
+  "license": "MIT"
+}
