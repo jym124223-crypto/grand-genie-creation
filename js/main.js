@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Routage & Rendu en fonction de la page active
   const path = window.location.pathname.toLowerCase();
   
-  if (path.includes('video.html')) {
+  if (path.includes('video.html') || path.includes('/videos/')) {
     initVideoDetailPage();
   } else if (path.includes('videos.html')) {
     initVideosCatalogPage();
@@ -131,9 +131,17 @@ function initHomePage() {
    ========================================================================== */
 function initVideoDetailPage() {
   const urlParams = new URLSearchParams(window.location.search);
-  const videoId = urlParams.get('id') || urlParams.get('v') || 'nobel-medecine-2026-code-cache';
+  let videoId = urlParams.get('id') || urlParams.get('v');
+  if (!videoId && window.location.pathname.includes('/videos/')) {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    videoId = parts[parts.length - 1].replace(/\.html$/, '');
+  }
+  if (!videoId) {
+    const featured = typeof getFeaturedVideo === 'function' ? getFeaturedVideo() : null;
+    videoId = featured ? featured.id : 'nobel-medecine-2026-code-cache';
+  }
   
-  const video = getVideoById(videoId) || getFeaturedVideo();
+  const video = getVideoById(videoId) || (typeof getFeaturedVideo === 'function' ? getFeaturedVideo() : null);
   if (!video) return;
 
   // Mise à jour balises SEO dynamiques

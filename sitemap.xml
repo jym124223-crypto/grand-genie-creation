@@ -1,71 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Pages Principales -->
   <url>
-    <loc>https://legrandgeniedelacreation.com/index.html</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://legrandgeniedelacreation.com/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://legrandgeniedelacreation.com/videos.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://legrandgeniedelacreation.com/themes.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://legrandgeniedelacreation.com/a-propos.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://legrandgeniedelacreation.com/infolettre.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Pages Vidéos Individuelles (URLs canoniques / versions écrites) -->
-  <url>
-    <loc>https://legrandgeniedelacreation.com/video.html?id=nobel-medecine-2026-code-cache</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://legrandgeniedelacreation.com/video.html?id=ajustement-fin-constantes-cosmologiques</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://legrandgeniedelacreation.com/video.html?id=constante-structure-fine-137</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://legrandgeniedelacreation.com/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre</loc>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://legrandgeniedelacreation.com/video.html?id=newton-kepler-visionnaires-createur</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://legrandgeniedelacreation.com/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat</loc>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://legrandgeniedelacreation.com/video.html?id=atp-synthase-le-moteur-rotatif-qui-defie-l-evolution</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://legrandgeniedelacreation.com/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-</loc>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://legrandgeniedelacreation.com/video.html?id=big-bang-commencement-espace-temps</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://legrandgeniedelacreation.com/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legrandgeniedelacreation.com/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legrandgeniedelacreation.com/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legrandgeniedelacreation.com/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve</loc>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

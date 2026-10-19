@@ -1,92 +1,82 @@
-# 📘 Guide Simple : Comment Ajouter une Nouvelle Vidéo
+# 📘 Guide : Synchronisation YouTube & Ajout de Contenu Écrit
 
-Bienvenue Jean-Yves ! Ajouter une nouvelle vidéo à votre site web « **Le Grand Génie de la Création** » est conçu pour être un jeu d'enfant. Vous n'avez pas besoin de toucher au code HTML ou CSS : **tout se passe dans un seul fichier simple : `data/videos.js`**.
+Le site « **Le Grand Génie de la Création** » est désormais **automatisé à 100% avec votre chaîne YouTube** (`@immensegeniedanslunivers`).
 
 ---
 
-## 🚀 Méthode en 3 étapes (2 minutes chrono)
+## ⚡ 1. Comment vos vidéos apparaissent sur le site
 
-### Étape 1 : Ouvrez le fichier `data/videos.js`
-Ouvrez le fichier [videos.js](file:///C:/Users/jym12/.gemini/antigravity-ide/scratch/grand-genie-creation/data/videos.js) avec votre éditeur de texte.
+Dès que vous publiez une vidéo sur YouTube :
+1. Au prochain build (ou push sur GitHub), le script `build.js` interroge automatiquement le flux RSS de votre chaîne :
+   `https://www.youtube.com/feeds/videos.xml?channel_id=UCnVoEsgYAxULYINIkqgQf0w`
+2. La vidéo est immédiatement ajoutée :
+   - À la une sur la **page d'accueil** (la vidéo la plus récente)
+   - Dans le catalogue complet sur la page **Vidéos** (avec recherche et filtres)
+   - Dans la thématique correspondante sur la page **Thèmes**
+   - Sur une page dédiée permanente (`/videos/votre-titre`) avec lecteur vidéo intégré et description
 
-### Étape 2 : Copiez-collez ce modèle
-Ajoutez simplement ce bloc au début du tableau `const VIDEOS = [ ... ];` :
+---
+
+## ✍️ 2. Comment ajouter le Thème et la Version Écrite (Script)
+
+Pour associer un thème précis, modifier le temps de lecture ou insérer le script écrit complet d'une vidéo, ouvrez le fichier :
+👉 **`data/manual_videos.js`**
+
+### Modèle à ajouter :
 
 ```javascript
-{
-  id: 'titre-court-de-la-video', // Ex: 'or-et-constantes-cosmiques' (sans espaces ni accents)
-  slug: 'titre-court-de-la-video',
-  title: 'Votre Titre de Vidéo Complet et Accrocheur (H1)',
-  featured: true, // Mettez true si vous voulez qu'elle soit la vidéo à la une sur l'accueil
-  theme: 'cosmologie', // Choisissez parmi : 'cosmologie', 'adn-vivant', 'physique', ou 'grands-scientifiques'
-  themeLabel: 'Cosmologie', // Nom affiché : 'Cosmologie', 'ADN et le vivant', 'Physique', ou 'Grands scientifiques'
-  youtubeId: 'ID_DE_VOTRE_VIDEO_YOUTUBE', // Ex: si l'URL est youtube.com/watch?v=AbCdEf123, l'ID est 'AbCdEf123'
-  youtubeUrl: 'https://www.youtube.com/watch?v=ID_DE_VOTRE_VIDEO_YOUTUBE',
-  summary: 'Court résumé percutant de 2 à 3 phrases pour Google, YouTube et la carte d\'aperçu.',
-  date: '20 Octobre 2026',
-  datePublished: '2026-10-20T10:00:00+02:00',
-  readTime: '8 min de lecture',
-  duration: 'PT15M30S', // Durée pour Google (ex: 15 min 30 s)
-  thumbnail: 'assets/images/theme-cosmologie.jpg', // ou le chemin de votre miniature personnalisée
+// Remplacez 'VOTRE_ID_YOUTUBE' par l'ID de votre vidéo (ex: '2Qn-coJEddU')
+"VOTRE_ID_YOUTUBE": {
+  theme: "ADN et vivant", // 'Cosmologie', 'ADN et vivant', 'Physique', ou 'Grands scientifiques'
+  readTime: "8 min de lecture",
+  summary: "Résumé personnalisé qui s'affiche sur la carte et pour Google (optionnel).",
   keyTakeaways: [
-    'Premier point clé à retenir de la vidéo.',
-    'Deuxième argument scientifique marquant.',
-    'Troisième réflexion sur le dessein créateur.'
+    "Premier point clé à retenir",
+    "Deuxième argument scientifique marquant",
+    "Troisième réflexion sur le dessein créateur"
   ],
-  content: `
+  script: `
     <p class="article-lead">
-      Paragraphe d'introduction percutant qui capte l'attention du lecteur dès la première phrase.
+      Paragraphe d'introduction percutant de votre script écrit.
     </p>
 
-    <h2>1. Premier grand sous-titre de votre démonstration</h2>
+    <h2>1. Premier grand point de votre démonstration</h2>
     <p>
-      Texte explicatif de votre première partie. Vous pouvez mettre des mots en <strong>gras</strong> pour faire ressortir les concepts clés.
+      Votre texte explicatif. Vous pouvez mettre des mots en <strong>gras</strong>.
     </p>
 
     <blockquote class="article-quote">
-      « Citation scientifique inspirante d'un chercheur ou d'un grand physicien. »
-      <cite>— Nom de l'auteur, profession</cite>
+      « Citation inspirante d'un scientifique. »
+      <cite>— Nom du chercheur</cite>
     </blockquote>
 
-    <h2>2. Deuxième sous-titre approfondi</h2>
+    <h2>2. Deuxième sous-titre</h2>
     <p>
-      Suite de votre démonstration avec les données observationnelles, les lois physiques ou biologiques.
+      Suite de vos explications détaillées.
     </p>
 
     <div class="article-callout">
       <h4>Point de réflexion clé</h4>
-      <p>
-        Un encadré bleu électrique élégant pour mettre en valeur un paradoxe ou une découverte frappante.
-      </p>
+      <p>Encadré mis en valeur pour un paradoxe ou une donnée frappante.</p>
     </div>
-
-    <h2>3. Conclusion et perspective</h2>
-    <p>
-      Synthèse finale montrant comment ces indices scientifiques pointent vers le Grand Génie créateur.
-    </p>
   `
-},
+}
 ```
 
-### Étape 3 : Sauvegardez le fichier
-Dès que vous enregistrez `data/videos.js` :
-1. ✅ La vidéo apparaît automatiquement sur la page **Accueil** (si `featured: true`).
-2. ✅ Elle s'ajoute automatiquement au catalogue **Vidéos** avec recherche instantanée.
-3. ✅ Elle se classe toute seule dans son **Thème** correspondant.
-4. ✅ Sa page dédiée (`video.html?id=titre-court-de-la-video`) est prête avec son lecteur YouTube, son texte complet, ses suggestions similaires et ses balises Google Schema.org !
+---
+
+## 🛡️ 3. Résilience et Sécurité (Mode Hors-Ligne)
+
+Si le flux YouTube ne répond pas pendant le build (coupure réseau, maintenance YouTube, etc.), le site **ne plante jamais**. Il utilise automatiquement la dernière liste connue enregistrée dans `data/youtube_cache.json`.
 
 ---
 
-## 🎨 Les 4 Thèmes Disponibles
-Pour le champ `theme`, utilisez l'une de ces 4 valeurs exactes :
-- `'cosmologie'` (pour *Cosmologie*)
-- `'adn-vivant'` (pour *ADN et le vivant*)
-- `'physique'` (pour *Physique*)
-- `'grands-scientifiques'` (pour *Grands scientifiques*)
+## 🚀 4. Déploiement
 
----
-
-## 📸 Où mettre les images et miniatures ?
-Déposez simplement vos images dans le dossier :
-`assets/images/`
-Puis indiquez leur nom dans le champ `thumbnail: 'assets/images/ma-miniature.jpg'`.
+Dès que vous avez modifié `data/manual_videos.js` ou souhaitez actualiser le site :
+```bash
+git add .
+git commit -m "feat: mise a jour des videos et scripts"
+git push origin main
+```
+Vercel lancera automatiquement la commande de build et mettra votre site en ligne en quelques secondes !
