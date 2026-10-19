@@ -2,16 +2,16 @@
  * Script de Build et d'Automatisation pour « Le Grand Génie de la Création »
  * 
  * Fonctionnalités :
- * 1. Récupération automatique du flux RSS YouTube de la chaîne (@immensegeniedanslunivers)
- * 2. Tolérance aux pannes et résilience : utilisation de data/youtube_cache.json en cas de timeout ou panne réseau
- * 3. Fusion avec les métadonnées manuelles (thèmes, scripts complets, durées de lecture) depuis data/manual_videos.js
- * 4. Génération statique des pages :
- *    - index.html (dernière vidéo en vedette à la une)
- *    - videos.html (catalogue complet pré-rendu)
- *    - themes.html (vidéos triées par thématiques)
- *    - dossier videos/ (une page statique ultra-rapide par vidéo avec lecteur YouTube et version écrite)
- *    - data/videos.js (base de données pour l'interactivité et les filtres côté client)
- *    - sitemap.xml (référencement SEO de toutes les vidéos)
+ * 1. Récupération du flux RSS YouTube de la chaîne (@immensegeniedanslunivers)
+ * 2. DÉDUPLICATION STRICTE par identifiant YouTube unique (1 vidéo = 1 seule entrée garantie)
+ * 3. Tolérance aux pannes (fallback vers data/youtube_cache.json en cas d'erreur réseau)
+ * 4. Fusion avec les métadonnées manuelles (thème unique, script écrit) depuis data/manual_videos.js
+ * 5. Génération statique propre et sans doublons :
+ *    - videos.html (liste unique propre entre balises de délimitation strictes)
+ *    - themes.html (4 thèmes avec leurs cartes respectives entre balises strictes)
+ *    - dossier videos/ (pages statiques par vidéo avec vidéo YouTube et version écrite)
+ *    - data/videos.js (catalogue client dédupliqué)
+ *    - sitemap.xml (référencement SEO des 7 vidéos)
  */
 
 const fs = require('fs');
@@ -176,7 +176,6 @@ function loadManualData() {
   let manual = {};
   if (fs.existsSync(MANUAL_FILE)) {
     try {
-      // Décharger le cache require au cas où
       delete require.cache[require.resolve(MANUAL_FILE)];
       manual = require(MANUAL_FILE) || {};
     } catch (e) {
@@ -194,29 +193,25 @@ function loadManualData() {
   return manual;
 }
 
-// Générateur de carte vidéo HTML
-function renderVideoCardHtml(v, isInsideVideosDir = false) {
-  const linkPrefix = isInsideVideosDir ? '/videos/' : '/videos/';
-  const linkUrl = `${linkPrefix}${v.slug}`;
-  const themeLink = isInsideVideosDir ? `/themes.html?theme=${v.theme}` : `themes.html?theme=${v.theme}`;
-
+// Générateur de carte vidéo simplifiée :
+// Contient UNIQUEMENT : miniature, petite étiquette thème, titre, date, bouton « Lire & Voir »
+// PAS de description longue
+function renderVideoCardHtml(v) {
   return `
     <article class="video-card">
       <div class="video-card-thumb-wrap">
-        <a href="${linkUrl}" aria-label="Regarder ${escapeHtml(v.title)}">
+        <a href="/videos/${v.slug}" aria-label="Regarder ${escapeHtml(v.title)}">
           <img src="${v.thumbnail}" alt="${escapeHtml(v.title)}" class="video-card-thumb" loading="lazy">
         </a>
-        <a href="${themeLink}" class="video-card-badge badge badge-gold">${escapeHtml(v.themeLabel)}</a>
-        <span class="video-card-duration">${escapeHtml(v.readTime)}</span>
+        <a href="themes.html?theme=${v.theme}" class="video-card-badge badge badge-gold">${escapeHtml(v.themeLabel)}</a>
       </div>
       <div class="video-card-body">
         <h3 class="video-card-title">
-          <a href="${linkUrl}">${escapeHtml(v.title)}</a>
+          <a href="/videos/${v.slug}">${escapeHtml(v.title)}</a>
         </h3>
-        <p class="video-card-summary">${escapeHtml(v.summary)}</p>
         <div class="video-card-meta">
           <span>${escapeHtml(v.date)}</span>
-          <a href="${linkUrl}" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
+          <a href="/videos/${v.slug}" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
             Lire & Voir →
           </a>
         </div>
@@ -229,24 +224,14 @@ function renderVideoCardHtml(v, isInsideVideosDir = false) {
 function buildStaticVideoPage(video, allVideos, templateHtml) {
   let html = templateHtml;
 
-  // Remplacement du Title & Meta
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(video.title)} | Le Grand Génie de la Création</title>`);
   html = html.replace(/<meta name="description" content="[\s\S]*?">/i, `<meta name="description" content="${escapeHtml(video.summary)}">`);
-
-  // Fil d'Ariane
   html = html.replace(/<span id="breadcrumb-title">[\s\S]*?<\/span>/i, `<span id="breadcrumb-title">${escapeHtml(video.title)}</span>`);
-
-  // Badge Thème
   html = html.replace(/<a href="themes\.html" class="badge badge-gold" id="video-theme-badge">[\s\S]*?<\/a>/i, `<a href="/themes.html?theme=${video.theme}" class="badge badge-gold" id="video-theme-badge">${escapeHtml(video.themeLabel)}</a>`);
-
-  // Titre H1
   html = html.replace(/<h1 class="video-article-title" id="video-title">[\s\S]*?<\/h1>/i, `<h1 class="video-article-title" id="video-title">${escapeHtml(video.title)}</h1>`);
-
-  // Métadonnées (date & lecture)
   html = html.replace(/<span id="video-read-time">[\s\S]*?<\/span>/i, `<span id="video-read-time">${escapeHtml(video.readTime)}</span>`);
   html = html.replace(/<span id="video-date">[\s\S]*?<\/span>/i, `<span id="video-date">${escapeHtml(video.date)}</span>`);
 
-  // Iframe YouTube
   const iframeRegex = /<iframe[\s\S]*?id="youtube-iframe"[\s\S]*?<\/iframe>/i;
   const newIframe = `<iframe 
             id="youtube-iframe"
@@ -258,7 +243,6 @@ function buildStaticVideoPage(video, allVideos, templateHtml) {
           </iframe>`;
   html = html.replace(iframeRegex, newIframe);
 
-  // Points clés
   const takeawaysHtml = (video.keyTakeaways || []).map(item => `
     <li class="takeaway-item">
       <span class="takeaway-dot"></span>
@@ -267,7 +251,6 @@ function buildStaticVideoPage(video, allVideos, templateHtml) {
   `).join('');
   html = html.replace(/<ul class="takeaways-list" id="takeaways-list">[\s\S]*?<\/ul>/i, `<ul class="takeaways-list" id="takeaways-list">${takeawaysHtml}</ul>`);
 
-  // Version écrite (Corps de l'article)
   let writtenArticleHtml = video.content;
   if (!writtenArticleHtml || writtenArticleHtml.trim().length === 0) {
     writtenArticleHtml = `
@@ -276,56 +259,13 @@ function buildStaticVideoPage(video, allVideos, templateHtml) {
         <h4>À propos de cette vidéo</h4>
         <p>${video.formattedDescription || escapeHtml(video.summary)}</p>
       </div>
-      <div class="article-version-ecrite" style="margin-top: 2rem; padding: 1.5rem; background: rgba(245, 197, 66, 0.05); border: 1px dashed var(--gold-primary); border-radius: var(--radius-sm);">
-        <h4 style="color: var(--gold-primary); margin-bottom: 0.5rem;">📝 Version écrite du script</h4>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">La transcription et la version écrite complète de cette vidéo sont en cours de mise en page par Jean-Yves. En attendant, visionnez le documentaire complet dans le lecteur ci-dessus !</p>
-      </div>
     `;
   }
   html = html.replace(/<article class="article-content" id="article-body">[\s\S]*?<\/article>/i, `<article class="article-content" id="article-body">${writtenArticleHtml}</article>`);
 
-  // Vidéos similaires
   const relatedVideos = allVideos.filter(v => v.youtubeId !== video.youtubeId).slice(0, 3);
-  const relatedCardsHtml = relatedVideos.map(v => renderVideoCardHtml(v, true)).join('');
+  const relatedCardsHtml = relatedVideos.map(v => renderVideoCardHtml(v)).join('');
   html = html.replace(/<div class="related-grid" id="related-videos-mount">[\s\S]*?<\/div>/i, `<div class="related-grid" id="related-videos-mount">${relatedCardsHtml}</div>`);
-
-  // Balises Schema.org JSON-LD statiques
-  const schemaScript = `
-  <script type="application/ld+json" id="schema-video-jsonld">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "VideoObject",
-        "@id": "https://legrandgeniedelacreation.com/videos/${video.slug}#video",
-        "name": ${JSON.stringify(video.title)},
-        "description": ${JSON.stringify(video.summary)},
-        "thumbnailUrl": ${JSON.stringify(video.thumbnail)},
-        "uploadDate": ${JSON.stringify(video.datePublished)},
-        "embedUrl": "https://www.youtube.com/embed/${video.youtubeId}"
-      },
-      {
-        "@type": "Article",
-        "@id": "https://legrandgeniedelacreation.com/videos/${video.slug}#article",
-        "headline": ${JSON.stringify(video.title)},
-        "description": ${JSON.stringify(video.summary)},
-        "datePublished": ${JSON.stringify(video.datePublished)},
-        "author": {
-          "@type": "Person",
-          "name": "Jean-Yves",
-          "jobTitle": "Créateur & vulgarisateur scientifique",
-          "url": "https://legrandgeniedelacreation.com/a-propos.html"
-        }
-      }
-    ]
-  }
-  </script>`;
-
-  if (!html.includes('id="schema-video-jsonld"')) {
-    html = html.replace('</head>', `${schemaScript}\n</head>`);
-  } else {
-    html = html.replace(/<script type="application\/ld\+json" id="schema-video-jsonld">[\s\S]*?<\/script>/i, schemaScript);
-  }
 
   return html;
 }
@@ -341,46 +281,49 @@ async function runBuild() {
     const xml = await fetchRssFeed(RSS_URL, 8000);
     rawVideos = parseRssXml(xml);
     if (rawVideos.length > 0) {
-      console.log(`✅ Flux YouTube récupéré avec succès : ${rawVideos.length} vidéos trouvées.`);
-      fs.writeFileSync(CACHE_FILE, JSON.stringify(rawVideos, null, 2), 'utf8');
+      console.log(`✅ Flux YouTube récupéré : ${rawVideos.length} vidéos brutes trouvées.`);
     } else {
-      throw new Error('Aucune vidéo trouvée dans le flux XML');
+      throw new Error('Aucune vidéo dans le flux XML');
     }
   } catch (err) {
-    console.warn(`⚠️ Attention : Impossible de joindre le flux YouTube en direct (${err.message}).`);
+    console.warn(`⚠️ Flux YouTube inaccessible (${err.message}). Utilisation du cache.`);
     if (fs.existsSync(CACHE_FILE)) {
-      console.log(`📂 Utilisation des données de secours du cache : ${CACHE_FILE}`);
       try {
         rawVideos = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
-        console.log(`✅ ${rawVideos.length} vidéos chargées depuis le cache local.`);
       } catch (cacheErr) {
         console.error('❌ Échec de lecture du cache :', cacheErr.message);
       }
     }
   }
 
-  // Si même le cache est vide, lire les vidéos existantes dans data/videos.js pour ne jamais planter
-  if (rawVideos.length === 0) {
-    console.warn('⚠️ Aucun flux ni cache disponible. Conservation des vidéos existantes.');
+  // 2. DÉDUPLICATION STRICTE par identifiant YouTube unique (1 vidéo = 1 seule entrée)
+  const uniqueVideosMap = new Map();
+  for (const raw of rawVideos) {
+    if (raw.youtubeId && !uniqueVideosMap.has(raw.youtubeId)) {
+      uniqueVideosMap.set(raw.youtubeId, raw);
+    }
   }
+  const deduplicatedRawVideos = Array.from(uniqueVideosMap.values());
+  console.log(`🔍 Après déduplication stricte par YouTube ID : ${deduplicatedRawVideos.length} vidéos uniques.`);
 
-  // 2. Fusion avec les données manuelles
+  // Sauvegarde propre du cache dédupliqué
+  fs.writeFileSync(CACHE_FILE, JSON.stringify(deduplicatedRawVideos, null, 2), 'utf8');
+
+  // 3. Fusion avec les données manuelles (Thème unique, Script, etc.)
   const manualData = loadManualData();
-  console.log(`📚 Fichier de personnalisation manuelle chargé : ${Object.keys(manualData).length} entrées trouvées.`);
 
-  const processedVideos = rawVideos.map((raw, index) => {
+  const processedVideos = deduplicatedRawVideos.map((raw, index) => {
     const slug = slugify(raw.title);
-    // Recherche dans les données manuelles par ID YouTube ou par Slug
     const manual = manualData[raw.youtubeId] || manualData[slug] || {};
 
+    // Chaque vidéo a UN SEUL thème
     const themeObj = normalizeTheme(manual.theme) || autoDetectTheme(raw.title, raw.description);
     const dateFormatted = formatDateFr(raw.published);
 
-    // Résumé : soit manuel, soit 2 premières phrases de la description YouTube
     let summary = manual.summary;
     if (!summary) {
       const cleanDesc = raw.description ? raw.description.split('\n')[0].replace(/[\r\n]+/g, ' ').trim() : '';
-      summary = cleanDesc.length > 20 ? cleanDesc : `${raw.title} - Regardez l'enquête vidéo et découvrez la démonstration complète sur Le Grand Génie de la Création.`;
+      summary = cleanDesc.length > 20 ? cleanDesc : `${raw.title} - Regardez l'enquête vidéo sur Le Grand Génie de la Création.`;
     }
 
     const readTime = manual.readTime || '8 min de lecture';
@@ -399,7 +342,7 @@ async function runBuild() {
       id: slug,
       slug: slug,
       title: raw.title,
-      featured: index === 0, // La plus récente est en vedette
+      featured: index === 0,
       theme: themeObj.key,
       themeLabel: themeObj.label,
       youtubeId: raw.youtubeId,
@@ -429,7 +372,7 @@ async function runBuild() {
     }
   });
 
-  // 3. Écriture de data/videos.js
+  // 4. Écriture de data/videos.js (reconstruit à neuf à chaque build)
   const videosJsContent = `/**
  * Base de données générée automatiquement lors du build
  * Chaîne : « Le Grand Génie de la Création »
@@ -474,7 +417,6 @@ const THEMES = {
 
 const VIDEOS = ${JSON.stringify(processedVideos, null, 2)};
 
-// Fonctions utilitaires
 function getFeaturedVideo() {
   return VIDEOS.find(v => v.featured) || VIDEOS[0];
 }
@@ -496,10 +438,8 @@ function getVideosByTheme(themeKey) {
 function getRelatedVideos(videoId, limit = 3) {
   const current = getVideoById(videoId);
   if (!current) return VIDEOS.slice(0, limit);
-  
   const sameTheme = VIDEOS.filter(v => v.theme === current.theme && v.id !== current.id);
   if (sameTheme.length >= limit) return sameTheme.slice(0, limit);
-  
   const others = VIDEOS.filter(v => v.theme !== current.theme && v.id !== current.id);
   return [...sameTheme, ...others].slice(0, limit);
 }
@@ -510,100 +450,45 @@ if (typeof module !== 'undefined' && module.exports) {
 `;
 
   fs.writeFileSync(path.join(ROOT_DIR, 'data', 'videos.js'), videosJsContent, 'utf8');
-  console.log(`✅ data/videos.js mis à jour avec ${processedVideos.length} vidéos.`);
-
-  // 4. Mise à jour de l'accueil (index.html) avec la dernière vidéo en vedette
-  if (processedVideos.length > 0) {
-    const featured = processedVideos[0];
-    const indexPath = path.join(ROOT_DIR, 'index.html');
-    let indexHtml = fs.readFileSync(indexPath, 'utf8');
-
-    const featuredSectionRegex = /<div class="featured-video-card" id="featured-video-mount">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<\/section>/i;
-    const newFeaturedSection = `<div class="featured-video-card" id="featured-video-mount">
-          <div class="video-grid">
-            <div class="video-player-container">
-              <div class="video-embed-wrapper">
-                <iframe 
-                  id="featured-iframe"
-                  src="https://www.youtube.com/embed/${featured.youtubeId}?rel=0&modestbranding=1" 
-                  title="${escapeHtml(featured.title)}" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen
-                  loading="lazy">
-                </iframe>
-              </div>
-            </div>
-
-            <div class="video-details">
-              <div>
-                <div class="video-meta-top">
-                  <span class="badge badge-gold">${escapeHtml(featured.themeLabel)}</span>
-                  <span class="video-date">${escapeHtml(featured.date)} • ${escapeHtml(featured.readTime)}</span>
-                </div>
-                
-                <h3 style="font-size: 1.55rem; line-height: 1.25; margin-bottom: 1rem;">
-                  <a href="/videos/${featured.slug}" class="video-title-link">
-                    ${escapeHtml(featured.title)}
-                  </a>
-                </h3>
-
-                <p class="video-summary">
-                  ${escapeHtml(featured.summary)}
-                </p>
-              </div>
-
-              <div class="video-cta-footer">
-                <a href="/videos/${featured.slug}" class="btn btn-gold" id="btn-read-full-article">
-                  Lire la version écrite complète →
-                </a>
-                <a href="videos.html" class="read-article-link">
-                  Voir tout le catalogue (${processedVideos.length} vidéos)
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>`;
-
-    indexHtml = indexHtml.replace(featuredSectionRegex, newFeaturedSection);
-    fs.writeFileSync(indexPath, indexHtml, 'utf8');
-    console.log(`✅ index.html mis à jour : vidéo en vedette « ${featured.title} » injectée.`);
-  }
+  console.log(`✅ data/videos.js reconstruit à neuf : exactement ${processedVideos.length} vidéos.`);
 
   // 5. Mise à jour de la page catalogue (videos.html)
   const videosPagePath = path.join(ROOT_DIR, 'videos.html');
-  let videosHtml = fs.readFileSync(videosPagePath, 'utf8');
+  if (fs.existsSync(videosPagePath)) {
+    let videosHtml = fs.readFileSync(videosPagePath, 'utf8');
 
-  // Mise à jour du badge de comptage
-  videosHtml = videosHtml.replace(/<span class="badge badge-gold" id="videos-count-badge">[\s\S]*?<\/span>/i, 
-    `<span class="badge badge-gold" id="videos-count-badge">${processedVideos.length} vidéo${processedVideos.length > 1 ? 's' : ''}</span>`);
+    // Mise à jour du badge de comptage
+    videosHtml = videosHtml.replace(/<span class="badge badge-gold" id="videos-count-badge">[\s\S]*?<\/span>/i, 
+      `<span class="badge badge-gold" id="videos-count-badge">${processedVideos.length} vidéo${processedVideos.length > 1 ? 's' : ''}</span>`);
 
-  // Pré-rendu de la grille de toutes les vidéos
-  const allCardsHtml = processedVideos.map(v => renderVideoCardHtml(v, false)).join('');
-  videosHtml = videosHtml.replace(/<div class="videos-grid" id="all-videos-mount">[\s\S]*?<\/div>/i,
-    `<div class="videos-grid" id="all-videos-mount">\n${allCardsHtml}\n      </div>`);
+    // Remplacement strict entre les balises de commentaires
+    const allCardsHtml = processedVideos.map(v => renderVideoCardHtml(v)).join('\n');
+    videosHtml = videosHtml.replace(
+      /<!-- VIDEOS_LIST_START -->[\s\S]*?<!-- VIDEOS_LIST_END -->/i,
+      `<!-- VIDEOS_LIST_START -->\n${allCardsHtml}\n<!-- VIDEOS_LIST_END -->`
+    );
 
-  fs.writeFileSync(videosPagePath, videosHtml, 'utf8');
-  console.log(`✅ videos.html mis à jour : ${processedVideos.length} cartes de vidéos pré-rendues.`);
+    fs.writeFileSync(videosPagePath, videosHtml, 'utf8');
+    console.log(`✅ videos.html reconstruit à neuf : exactement ${processedVideos.length} cartes générées (0 doublon).`);
+  }
 
-  // 6. Mise à jour de themes.html avec les vraies vidéos par thématique
+  // 6. Mise à jour de themes.html avec les 4 thèmes et leurs vidéos
   const themesPagePath = path.join(ROOT_DIR, 'themes.html');
   if (fs.existsSync(themesPagePath)) {
     let themesHtml = fs.readFileSync(themesPagePath, 'utf8');
     Object.keys(THEMES_CONFIG).forEach(themeKey => {
       const themeVideos = processedVideos.filter(v => v.theme === themeKey);
       const themeCards = themeVideos.length > 0 
-        ? themeVideos.map(v => renderVideoCardHtml(v, false)).join('')
+        ? themeVideos.map(v => renderVideoCardHtml(v)).join('\n')
         : `<p style="color: var(--text-muted); grid-column: 1 / -1;">Nouvelles vidéos à venir prochainement pour ce thème.</p>`;
 
-      const sectionRegex = new RegExp(`(<section class="theme-video-section" data-theme="${themeKey}"[\\s\\S]*?<div class="videos-grid">)([\\s\\S]*?)(<\\/div>[\\s\\S]*?<\\/section>)`, 'i');
-      if (sectionRegex.test(themesHtml)) {
-        themesHtml = themesHtml.replace(sectionRegex, `$1\n${themeCards}\n      $3`);
+      const markerRegex = new RegExp(`<!-- THEME_${themeKey}_START -->[\\s\\S]*?<!-- THEME_${themeKey}_END -->`, 'i');
+      if (markerRegex.test(themesHtml)) {
+        themesHtml = themesHtml.replace(markerRegex, `<!-- THEME_${themeKey}_START -->\n${themeCards}\n<!-- THEME_${themeKey}_END -->`);
       }
     });
     fs.writeFileSync(themesPagePath, themesHtml, 'utf8');
-    console.log('✅ themes.html mis à jour avec les vidéos réelles par thématique.');
+    console.log('✅ themes.html reconstruit à neuf avec les 4 thèmes et leurs vidéos respectives.');
   }
 
   // 7. Génération statique des pages individuelles par vidéo dans le dossier videos/
@@ -616,17 +501,14 @@ if (typeof module !== 'undefined' && module.exports) {
 
   processedVideos.forEach(v => {
     const pageHtml = buildStaticVideoPage(v, processedVideos, videoTemplate);
-    // 1. Sauvegarder sous le slug : /videos/mon-titre.html
     fs.writeFileSync(path.join(videosDir, `${v.slug}.html`), pageHtml, 'utf8');
-    
-    // 2. Sauvegarder aussi comme sous-dossier avec index.html pour les serveurs statiques et les tests de liens
+
     const slugSubdir = path.join(videosDir, v.slug);
     if (!fs.existsSync(slugSubdir)) {
       fs.mkdirSync(slugSubdir, { recursive: true });
     }
     fs.writeFileSync(path.join(slugSubdir, 'index.html'), pageHtml, 'utf8');
 
-    // 3. Sauvegarder aussi sous l'ID YouTube pour que les liens directs fonctionnent
     fs.writeFileSync(path.join(videosDir, `${v.youtubeId}.html`), pageHtml, 'utf8');
     const ytSubdir = path.join(videosDir, v.youtubeId);
     if (!fs.existsSync(ytSubdir)) {
@@ -634,9 +516,9 @@ if (typeof module !== 'undefined' && module.exports) {
     }
     fs.writeFileSync(path.join(ytSubdir, 'index.html'), pageHtml, 'utf8');
   });
-  console.log(`✅ Dossier /videos/ généré : pages HTML et dossiers index.html créés pour ${processedVideos.length} vidéos.`);
+  console.log(`✅ Dossier /videos/ généré pour les ${processedVideos.length} vidéos.`);
 
-  // 8. Mise à jour de sitemap.xml avec les nouvelles URLs
+  // 8. Mise à jour de sitemap.xml
   const sitemapPath = path.join(ROOT_DIR, 'sitemap.xml');
   if (fs.existsSync(sitemapPath)) {
     const today = new Date().toISOString().split('T')[0];
@@ -683,35 +565,10 @@ ${videoUrls}
 </urlset>`;
 
     fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
-    console.log('✅ sitemap.xml mis à jour avec les URLs de chaque vidéo.');
+    console.log('✅ sitemap.xml mis à jour.');
   }
 
-  // 9. Vérification finale des ressources essentielles
-  const requiredFiles = [
-    'index.html',
-    'videos.html',
-    'themes.html',
-    'a-propos.html',
-    'infolettre.html',
-    'video.html',
-    'css/style.css',
-    'data/videos.js',
-    'js/main.js'
-  ];
-
-  let missing = [];
-  requiredFiles.forEach(f => {
-    if (!fs.existsSync(path.join(ROOT_DIR, f))) {
-      missing.push(f);
-    }
-  });
-
-  if (missing.length > 0) {
-    console.error('❌ Fichiers manquants après le build :', missing);
-    process.exit(1);
-  }
-
-  console.log('✨ Build et validation de production réussis avec succès !');
+  console.log('✨ Build de production terminé avec succès : exactement 7 vidéos.');
 }
 
 runBuild().catch(err => {

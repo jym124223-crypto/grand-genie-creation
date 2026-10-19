@@ -360,20 +360,18 @@ function renderVideoCard(v) {
   return `
     <article class="video-card">
       <div class="video-card-thumb-wrap">
-        <a href="video.html?id=${v.slug}" aria-label="Regarder ${v.title}">
+        <a href="/videos/${v.slug}" aria-label="Regarder ${v.title}">
           <img src="${v.thumbnail}" alt="${v.title}" class="video-card-thumb" loading="lazy">
         </a>
-        <span class="video-card-badge badge badge-gold">${v.themeLabel}</span>
-        <span class="video-card-duration">${v.readTime}</span>
+        <a href="themes.html?theme=${v.theme}" class="video-card-badge badge badge-gold">${v.themeLabel}</a>
       </div>
       <div class="video-card-body">
         <h3 class="video-card-title">
-          <a href="video.html?id=${v.slug}">${v.title}</a>
+          <a href="/videos/${v.slug}">${v.title}</a>
         </h3>
-        <p class="video-card-summary">${v.summary}</p>
         <div class="video-card-meta">
           <span>${v.date}</span>
-          <a href="video.html?id=${v.slug}" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
+          <a href="/videos/${v.slug}" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
             Lire & Voir →
           </a>
         </div>

@@ -3,20 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toutes les Vidéos & Articles | Le Grand Génie de la Création</title>
-  <meta name="description" content="Explorez l'ensemble des vidéos et versions écrites sur la cosmologie, la physique quantique, l'ADN et les pionniers de la science par Jean-Yves.">
+  <title>Toutes les vidéos | Le Grand Génie de la Création</title>
+  <meta name="description" content="Explorez l'ensemble des vidéos de Jean-Yves sur la cosmologie, l'ADN, la physique et les grands scientifiques.">
+  <meta name="author" content="Jean-Yves">
   <link rel="canonical" href="https://legrandgeniedelacreation.com/videos.html">
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Toutes les vidéos | Le Grand Génie de la Création">
+  <meta property="og:description" content="Catalogue complet des vidéos et enquêtes scientifiques.">
+  <meta property="og:image" content="https://legrandgeniedelacreation.com/assets/images/hero-cosmic.jpg">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
   <!-- ==========================================================================
-       EN-TÊTE & MENU (5 ÉLÉMENTS MAXIMUM)
+       EN-TÊTE & MENU
        ========================================================================== -->
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="brand-logo">
+      <a href="index.html" class="brand-logo" id="header-brand-logo">
         <div class="brand-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/>
@@ -29,7 +37,7 @@
         </div>
       </a>
 
-      <nav class="main-nav" aria-label="Navigation principale">
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Accueil</a></li>
           <li><a href="videos.html" class="nav-link active">Vidéos</a></li>
@@ -45,7 +53,7 @@
         </a>
       </nav>
 
-      <button class="mobile-toggle" aria-label="Ouvrir le menu mobile">
+      <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Ouvrir le menu mobile" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="4" y1="6" x2="20" y2="6"/>
           <line x1="4" y1="12" x2="20" y2="12"/>
@@ -55,39 +63,35 @@
     </div>
   </header>
 
-  <main style="padding-block: 4rem 6rem;">
+  <main style="padding-block: 3rem 6rem;">
     <div class="container">
       
-      <header class="section-header" style="max-width: 800px; margin-bottom: 3rem;">
-        <span class="section-tag">Catalogue & Bibliothèque Écrite</span>
-        <h1>Toutes les vidéos et leurs transcriptions</h1>
-        <p class="section-desc">
-          Chaque vidéo est accompagnée de sa version écrite complète, optimisée avec des schémas, des sous-titres détaillés et des citations académiques.
+      <header class="section-header" style="max-width: 800px; margin-bottom: 2.5rem;">
+        <span class="section-tag">Catalogue</span>
+        <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 0.5rem;">Toutes les vidéos</h1>
+        <p class="section-desc" style="color: var(--text-muted);">
+          Visionnez nos enquêtes scientifiques et découvrez leur version écrite approfondie.
         </p>
       </header>
 
-      <!-- Barre de Recherche et de Filtrage -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1.75rem; margin-bottom: 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;">
-        
-        <!-- Champ Recherche -->
-        <div style="flex: 1; min-width: 260px; position: relative;">
+      <!-- Barre de Filtrage -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem 1.5rem; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div style="flex: 1; min-width: 240px; position: relative;">
           <input 
             type="search" 
             id="video-search-input" 
-            placeholder="Rechercher par mot-clé (ex: ADN, Newton, constante, gravitation...)" 
-            style="width: 100%; background: #040a12; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-sm); padding: 0.75rem 1rem 0.75rem 2.6rem; color: #fff; font-family: var(--font-body); font-size: 0.95rem;"
+            placeholder="Rechercher une vidéo..." 
+            style="width: 100%; background: #040a12; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-sm); padding: 0.65rem 1rem 0.65rem 2.5rem; color: #fff; font-size: 0.95rem;"
           >
-          <svg style="position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-dim);" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg style="position: absolute; left: 0.8rem; top: 50%; transform: translateY(-50%); color: var(--text-dim);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
         </div>
 
-        <!-- Filtre Thème -->
         <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <label for="theme-select" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">Filtrer :</label>
           <select 
             id="theme-select" 
-            style="background: #040a12; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-sm); padding: 0.75rem 1.25rem; color: #fff; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600; cursor: pointer;"
+            style="background: #040a12; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-sm); padding: 0.65rem 1rem; color: #fff; font-size: 0.9rem; font-weight: 600; cursor: pointer;"
           >
             <option value="all">Tous les thèmes</option>
             <option value="cosmologie">Cosmologie</option>
@@ -99,8 +103,9 @@
         </div>
       </div>
 
-      <!-- Grille des Vidéos -->
+      <!-- Grille Unique des Vidéos -->
       <div class="videos-grid" id="all-videos-mount">
+<!-- VIDEOS_LIST_START -->
 
     <article class="video-card">
       <div class="video-card-thumb-wrap">
@@ -108,13 +113,11 @@
           <img src="https://i3.ytimg.com/vi/2Qn-coJEddU/hqdefault.jpg" alt="PRIX NOBEL DE MEDECINE 2026 : le code caché qui pointe vers un génie créateur!" class="video-card-thumb" loading="lazy">
         </a>
         <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
       </div>
       <div class="video-card-body">
         <h3 class="video-card-title">
           <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre">PRIX NOBEL DE MEDECINE 2026 : le code caché qui pointe vers un génie créateur!</a>
         </h3>
-        <p class="video-card-summary">Plongée vertigineuse au cœur de la cellule : quand les nanomachines biologiques, la densité d&#39;information numérique de l&#39;ADN et les mécanismes d&#39;auto-réparation défient les explications matérialistes et pointent vers un Génie programmateur.</p>
         <div class="video-card-meta">
           <span>17 Octobre 2026</span>
           <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
@@ -124,19 +127,18 @@
       </div>
     </article>
   
+
     <article class="video-card">
       <div class="video-card-thumb-wrap">
         <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" aria-label="Regarder Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur">
           <img src="https://i4.ytimg.com/vi/slei71ya6Pc/hqdefault.jpg" alt="Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur" class="video-card-thumb" loading="lazy">
         </a>
         <a href="themes.html?theme=grands-scientifiques" class="video-card-badge badge badge-gold">Grands scientifiques</a>
-        <span class="video-card-duration">11 min de lecture</span>
       </div>
       <div class="video-card-body">
         <h3 class="video-card-title">
           <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat">Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur</a>
         </h3>
-        <p class="video-card-summary">Loin d&#39;opposer foi et science, les pères de la révolution scientifique moderne cherchaient à « penser les pensées de Dieu après Lui ». Retour sur les écrits et manuscrits originaux de Newton, Kepler et Maxwell.</p>
         <div class="video-card-meta">
           <span>14 Octobre 2026</span>
           <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
@@ -146,19 +148,18 @@
       </div>
     </article>
   
+
     <article class="video-card">
       <div class="video-card-thumb-wrap">
         <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" aria-label="Regarder LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.">
           <img src="https://i2.ytimg.com/vi/UoxYZlJpPJ8/hqdefault.jpg" alt="LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur." class="video-card-thumb" loading="lazy">
         </a>
         <a href="themes.html?theme=physique" class="video-card-badge badge badge-gold">Physique</a>
-        <span class="video-card-duration">9 min de lecture</span>
       </div>
       <div class="video-card-body">
         <h3 class="video-card-title">
           <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-">LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.</a>
         </h3>
-        <p class="video-card-summary">Comment prouver l&#39;existence de ce qui échappe à nos sens directs ? Quand la physique quantique et la détection des neutrinos révèlent que l&#39;invisible soutient et orchestre toute la matière visible.</p>
         <div class="video-card-meta">
           <span>12 Octobre 2026</span>
           <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
@@ -168,19 +169,18 @@
       </div>
     </article>
   
+
     <article class="video-card">
       <div class="video-card-thumb-wrap">
         <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" aria-label="Regarder 10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!">
           <img src="https://i3.ytimg.com/vi/Vv1L9zfWo9w/hqdefault.jpg" alt="10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!" class="video-card-thumb" loading="lazy">
         </a>
         <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
       </div>
       <div class="video-card-body">
         <h3 class="video-card-title">
           <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur">10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!</a>
         </h3>
-        <p class="video-card-summary">Avec 126 millions de photorécepteurs, un système d&#39;auto-nettoyage continu et un processeur neuronal traitant des millions de bits par seconde, l&#39;œil humain humilie nos meilleures caméras numériques.</p>
         <div class="video-card-meta">
           <span>10 Octobre 2026</span>
           <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
@@ -190,19 +190,18 @@
       </div>
     </article>
   
+
     <article class="video-card">
       <div class="video-card-thumb-wrap">
         <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" aria-label="Regarder 3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.">
           <img src="https://i1.ytimg.com/vi/8JJFZ_rkqRk/hqdefault.jpg" alt="3 machines moleculaires dans la cellule: La preuve d&#39;un créateur." class="video-card-thumb" loading="lazy">
         </a>
         <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
       </div>
       <div class="video-card-body">
         <h3 class="video-card-title">
           <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur">3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.</a>
         </h3>
-        <p class="video-card-summary">Kinésine, flagelle bactérien, ATP synthase : découvrez les moteurs rotatifs et les transporteurs nanoscopiques qui fonctionnent au cœur de vos cellules avec un rendement énergétique frôlant 100%.</p>
         <div class="video-card-meta">
           <span>8 Octobre 2026</span>
           <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
@@ -212,19 +211,18 @@
       </div>
     </article>
   
+
     <article class="video-card">
       <div class="video-card-thumb-wrap">
         <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" aria-label="Regarder Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur">
           <img src="https://i3.ytimg.com/vi/Nte26WFswSU/hqdefault.jpg" alt="Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur" class="video-card-thumb" loading="lazy">
         </a>
         <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">9 min de lecture</span>
       </div>
       <div class="video-card-body">
         <h3 class="video-card-title">
           <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur">Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur</a>
         </h3>
-        <p class="video-card-summary">Magnétosphère, couche d&#39;ozone, atmosphère protectrice : la Terre n&#39;est pas un rocher ordinaire, c&#39;est une oasis cosmique protégée par un triple blindage réglé pour préserver la vie contre l&#39;hostilité de l&#39;espace.</p>
         <div class="video-card-meta">
           <span>7 Octobre 2026</span>
           <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
@@ -234,19 +232,18 @@
       </div>
     </article>
   
+
     <article class="video-card">
       <div class="video-card-thumb-wrap">
         <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" aria-label="Regarder 1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.">
           <img src="https://i4.ytimg.com/vi/G7XhpPR3eWI/hqdefault.jpg" alt="1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur." class="video-card-thumb" loading="lazy">
         </a>
         <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">10 min de lecture</span>
       </div>
       <div class="video-card-body">
         <h3 class="video-card-title">
           <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve">1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.</a>
         </h3>
-        <p class="video-card-summary">Découvrez le calcul vertigineux du prix Nobel Roger Penrose : une chance sur 10 puissance 10 puissance 123 pour que le Big Bang démarre avec un degré d&#39;ordre aussi exceptionnel. Un nombre qui pulvérise définitivement l&#39;hypothèse du hasard.</p>
         <div class="video-card-meta">
           <span>5 Octobre 2026</span>
           <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
@@ -256,594 +253,7 @@
       </div>
     </article>
   
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre">PRIX NOBEL DE MEDECINE 2026 : le code caché qui pointe vers un génie créateur!</a>
-        </h3>
-        <p class="video-card-summary">Plongée vertigineuse au cœur de la cellule : quand les nanomachines biologiques, la densité d&#39;information numérique de l&#39;ADN et les mécanismes d&#39;auto-réparation défient les explications matérialistes et pointent vers un Génie programmateur.</p>
-        <div class="video-card-meta">
-          <span>17 Octobre 2026</span>
-          <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" aria-label="Regarder Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur">
-          <img src="https://i4.ytimg.com/vi/slei71ya6Pc/hqdefault.jpg" alt="Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=grands-scientifiques" class="video-card-badge badge badge-gold">Grands scientifiques</a>
-        <span class="video-card-duration">11 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat">Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur</a>
-        </h3>
-        <p class="video-card-summary">Loin d&#39;opposer foi et science, les pères de la révolution scientifique moderne cherchaient à « penser les pensées de Dieu après Lui ». Retour sur les écrits et manuscrits originaux de Newton, Kepler et Maxwell.</p>
-        <div class="video-card-meta">
-          <span>14 Octobre 2026</span>
-          <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" aria-label="Regarder LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.">
-          <img src="https://i2.ytimg.com/vi/UoxYZlJpPJ8/hqdefault.jpg" alt="LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=physique" class="video-card-badge badge badge-gold">Physique</a>
-        <span class="video-card-duration">9 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-">LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.</a>
-        </h3>
-        <p class="video-card-summary">Comment prouver l&#39;existence de ce qui échappe à nos sens directs ? Quand la physique quantique et la détection des neutrinos révèlent que l&#39;invisible soutient et orchestre toute la matière visible.</p>
-        <div class="video-card-meta">
-          <span>12 Octobre 2026</span>
-          <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" aria-label="Regarder 10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!">
-          <img src="https://i3.ytimg.com/vi/Vv1L9zfWo9w/hqdefault.jpg" alt="10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur">10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!</a>
-        </h3>
-        <p class="video-card-summary">Avec 126 millions de photorécepteurs, un système d&#39;auto-nettoyage continu et un processeur neuronal traitant des millions de bits par seconde, l&#39;œil humain humilie nos meilleures caméras numériques.</p>
-        <div class="video-card-meta">
-          <span>10 Octobre 2026</span>
-          <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" aria-label="Regarder 3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.">
-          <img src="https://i1.ytimg.com/vi/8JJFZ_rkqRk/hqdefault.jpg" alt="3 machines moleculaires dans la cellule: La preuve d&#39;un créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur">3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.</a>
-        </h3>
-        <p class="video-card-summary">Kinésine, flagelle bactérien, ATP synthase : découvrez les moteurs rotatifs et les transporteurs nanoscopiques qui fonctionnent au cœur de vos cellules avec un rendement énergétique frôlant 100%.</p>
-        <div class="video-card-meta">
-          <span>8 Octobre 2026</span>
-          <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" aria-label="Regarder Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur">
-          <img src="https://i3.ytimg.com/vi/Nte26WFswSU/hqdefault.jpg" alt="Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">9 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur">Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur</a>
-        </h3>
-        <p class="video-card-summary">Magnétosphère, couche d&#39;ozone, atmosphère protectrice : la Terre n&#39;est pas un rocher ordinaire, c&#39;est une oasis cosmique protégée par un triple blindage réglé pour préserver la vie contre l&#39;hostilité de l&#39;espace.</p>
-        <div class="video-card-meta">
-          <span>7 Octobre 2026</span>
-          <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" aria-label="Regarder 1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.">
-          <img src="https://i4.ytimg.com/vi/G7XhpPR3eWI/hqdefault.jpg" alt="1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">10 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve">1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.</a>
-        </h3>
-        <p class="video-card-summary">Découvrez le calcul vertigineux du prix Nobel Roger Penrose : une chance sur 10 puissance 10 puissance 123 pour que le Big Bang démarre avec un degré d&#39;ordre aussi exceptionnel. Un nombre qui pulvérise définitivement l&#39;hypothèse du hasard.</p>
-        <div class="video-card-meta">
-          <span>5 Octobre 2026</span>
-          <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre">PRIX NOBEL DE MEDECINE 2026 : le code caché qui pointe vers un génie créateur!</a>
-        </h3>
-        <p class="video-card-summary">Plongée vertigineuse au cœur de la cellule : quand les nanomachines biologiques, la densité d&#39;information numérique de l&#39;ADN et les mécanismes d&#39;auto-réparation défient les explications matérialistes et pointent vers un Génie programmateur.</p>
-        <div class="video-card-meta">
-          <span>17 Octobre 2026</span>
-          <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" aria-label="Regarder Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur">
-          <img src="https://i4.ytimg.com/vi/slei71ya6Pc/hqdefault.jpg" alt="Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=grands-scientifiques" class="video-card-badge badge badge-gold">Grands scientifiques</a>
-        <span class="video-card-duration">11 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat">Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur</a>
-        </h3>
-        <p class="video-card-summary">Loin d&#39;opposer foi et science, les pères de la révolution scientifique moderne cherchaient à « penser les pensées de Dieu après Lui ». Retour sur les écrits et manuscrits originaux de Newton, Kepler et Maxwell.</p>
-        <div class="video-card-meta">
-          <span>14 Octobre 2026</span>
-          <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" aria-label="Regarder LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.">
-          <img src="https://i2.ytimg.com/vi/UoxYZlJpPJ8/hqdefault.jpg" alt="LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=physique" class="video-card-badge badge badge-gold">Physique</a>
-        <span class="video-card-duration">9 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-">LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.</a>
-        </h3>
-        <p class="video-card-summary">Comment prouver l&#39;existence de ce qui échappe à nos sens directs ? Quand la physique quantique et la détection des neutrinos révèlent que l&#39;invisible soutient et orchestre toute la matière visible.</p>
-        <div class="video-card-meta">
-          <span>12 Octobre 2026</span>
-          <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" aria-label="Regarder 10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!">
-          <img src="https://i3.ytimg.com/vi/Vv1L9zfWo9w/hqdefault.jpg" alt="10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur">10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!</a>
-        </h3>
-        <p class="video-card-summary">Avec 126 millions de photorécepteurs, un système d&#39;auto-nettoyage continu et un processeur neuronal traitant des millions de bits par seconde, l&#39;œil humain humilie nos meilleures caméras numériques.</p>
-        <div class="video-card-meta">
-          <span>10 Octobre 2026</span>
-          <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" aria-label="Regarder 3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.">
-          <img src="https://i1.ytimg.com/vi/8JJFZ_rkqRk/hqdefault.jpg" alt="3 machines moleculaires dans la cellule: La preuve d&#39;un créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur">3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.</a>
-        </h3>
-        <p class="video-card-summary">Kinésine, flagelle bactérien, ATP synthase : découvrez les moteurs rotatifs et les transporteurs nanoscopiques qui fonctionnent au cœur de vos cellules avec un rendement énergétique frôlant 100%.</p>
-        <div class="video-card-meta">
-          <span>8 Octobre 2026</span>
-          <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" aria-label="Regarder Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur">
-          <img src="https://i3.ytimg.com/vi/Nte26WFswSU/hqdefault.jpg" alt="Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">9 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur">Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur</a>
-        </h3>
-        <p class="video-card-summary">Magnétosphère, couche d&#39;ozone, atmosphère protectrice : la Terre n&#39;est pas un rocher ordinaire, c&#39;est une oasis cosmique protégée par un triple blindage réglé pour préserver la vie contre l&#39;hostilité de l&#39;espace.</p>
-        <div class="video-card-meta">
-          <span>7 Octobre 2026</span>
-          <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" aria-label="Regarder 1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.">
-          <img src="https://i4.ytimg.com/vi/G7XhpPR3eWI/hqdefault.jpg" alt="1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">10 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve">1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.</a>
-        </h3>
-        <p class="video-card-summary">Découvrez le calcul vertigineux du prix Nobel Roger Penrose : une chance sur 10 puissance 10 puissance 123 pour que le Big Bang démarre avec un degré d&#39;ordre aussi exceptionnel. Un nombre qui pulvérise définitivement l&#39;hypothèse du hasard.</p>
-        <div class="video-card-meta">
-          <span>5 Octobre 2026</span>
-          <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre">PRIX NOBEL DE MEDECINE 2026 : le code caché qui pointe vers un génie créateur!</a>
-        </h3>
-        <p class="video-card-summary">Plongée vertigineuse au cœur de la cellule : quand les nanomachines biologiques, la densité d&#39;information numérique de l&#39;ADN et les mécanismes d&#39;auto-réparation défient les explications matérialistes et pointent vers un Génie programmateur.</p>
-        <div class="video-card-meta">
-          <span>17 Octobre 2026</span>
-          <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" aria-label="Regarder Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur">
-          <img src="https://i4.ytimg.com/vi/slei71ya6Pc/hqdefault.jpg" alt="Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=grands-scientifiques" class="video-card-badge badge badge-gold">Grands scientifiques</a>
-        <span class="video-card-duration">11 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat">Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur</a>
-        </h3>
-        <p class="video-card-summary">Loin d&#39;opposer foi et science, les pères de la révolution scientifique moderne cherchaient à « penser les pensées de Dieu après Lui ». Retour sur les écrits et manuscrits originaux de Newton, Kepler et Maxwell.</p>
-        <div class="video-card-meta">
-          <span>14 Octobre 2026</span>
-          <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" aria-label="Regarder LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.">
-          <img src="https://i2.ytimg.com/vi/UoxYZlJpPJ8/hqdefault.jpg" alt="LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=physique" class="video-card-badge badge badge-gold">Physique</a>
-        <span class="video-card-duration">9 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-">LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.</a>
-        </h3>
-        <p class="video-card-summary">Comment prouver l&#39;existence de ce qui échappe à nos sens directs ? Quand la physique quantique et la détection des neutrinos révèlent que l&#39;invisible soutient et orchestre toute la matière visible.</p>
-        <div class="video-card-meta">
-          <span>12 Octobre 2026</span>
-          <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" aria-label="Regarder 10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!">
-          <img src="https://i3.ytimg.com/vi/Vv1L9zfWo9w/hqdefault.jpg" alt="10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur">10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!</a>
-        </h3>
-        <p class="video-card-summary">Avec 126 millions de photorécepteurs, un système d&#39;auto-nettoyage continu et un processeur neuronal traitant des millions de bits par seconde, l&#39;œil humain humilie nos meilleures caméras numériques.</p>
-        <div class="video-card-meta">
-          <span>10 Octobre 2026</span>
-          <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" aria-label="Regarder 3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.">
-          <img src="https://i1.ytimg.com/vi/8JJFZ_rkqRk/hqdefault.jpg" alt="3 machines moleculaires dans la cellule: La preuve d&#39;un créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur">3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.</a>
-        </h3>
-        <p class="video-card-summary">Kinésine, flagelle bactérien, ATP synthase : découvrez les moteurs rotatifs et les transporteurs nanoscopiques qui fonctionnent au cœur de vos cellules avec un rendement énergétique frôlant 100%.</p>
-        <div class="video-card-meta">
-          <span>8 Octobre 2026</span>
-          <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" aria-label="Regarder Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur">
-          <img src="https://i3.ytimg.com/vi/Nte26WFswSU/hqdefault.jpg" alt="Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">9 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur">Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur</a>
-        </h3>
-        <p class="video-card-summary">Magnétosphère, couche d&#39;ozone, atmosphère protectrice : la Terre n&#39;est pas un rocher ordinaire, c&#39;est une oasis cosmique protégée par un triple blindage réglé pour préserver la vie contre l&#39;hostilité de l&#39;espace.</p>
-        <div class="video-card-meta">
-          <span>7 Octobre 2026</span>
-          <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" aria-label="Regarder 1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.">
-          <img src="https://i4.ytimg.com/vi/G7XhpPR3eWI/hqdefault.jpg" alt="1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">10 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve">1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.</a>
-        </h3>
-        <p class="video-card-summary">Découvrez le calcul vertigineux du prix Nobel Roger Penrose : une chance sur 10 puissance 10 puissance 123 pour que le Big Bang démarre avec un degré d&#39;ordre aussi exceptionnel. Un nombre qui pulvérise définitivement l&#39;hypothèse du hasard.</p>
-        <div class="video-card-meta">
-          <span>5 Octobre 2026</span>
-          <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre">PRIX NOBEL DE MEDECINE 2026 : le code caché qui pointe vers un génie créateur!</a>
-        </h3>
-        <p class="video-card-summary">Plongée vertigineuse au cœur de la cellule : quand les nanomachines biologiques, la densité d&#39;information numérique de l&#39;ADN et les mécanismes d&#39;auto-réparation défient les explications matérialistes et pointent vers un Génie programmateur.</p>
-        <div class="video-card-meta">
-          <span>17 Octobre 2026</span>
-          <a href="/videos/prix-nobel-de-medecine-2026-le-code-cache-qui-pointe-vers-un-genie-cre" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" aria-label="Regarder Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur">
-          <img src="https://i4.ytimg.com/vi/slei71ya6Pc/hqdefault.jpg" alt="Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=grands-scientifiques" class="video-card-badge badge badge-gold">Grands scientifiques</a>
-        <span class="video-card-duration">11 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat">Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur</a>
-        </h3>
-        <p class="video-card-summary">Loin d&#39;opposer foi et science, les pères de la révolution scientifique moderne cherchaient à « penser les pensées de Dieu après Lui ». Retour sur les écrits et manuscrits originaux de Newton, Kepler et Maxwell.</p>
-        <div class="video-card-meta">
-          <span>14 Octobre 2026</span>
-          <a href="/videos/kepler-newton-maxwell-3-geants-de-la-science-qui-croyaient-en-un-creat" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" aria-label="Regarder LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.">
-          <img src="https://i2.ytimg.com/vi/UoxYZlJpPJ8/hqdefault.jpg" alt="LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=physique" class="video-card-badge badge badge-gold">Physique</a>
-        <span class="video-card-duration">9 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-">LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l&#39;existence du Créateur.</a>
-        </h3>
-        <p class="video-card-summary">Comment prouver l&#39;existence de ce qui échappe à nos sens directs ? Quand la physique quantique et la détection des neutrinos révèlent que l&#39;invisible soutient et orchestre toute la matière visible.</p>
-        <div class="video-card-meta">
-          <span>12 Octobre 2026</span>
-          <a href="/videos/le-prix-nobel-de-physique-2026-detection-des-neutrinos-et-les-preuves-" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" aria-label="Regarder 10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!">
-          <img src="https://i3.ytimg.com/vi/Vv1L9zfWo9w/hqdefault.jpg" alt="10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur">10 faits fascinants sur l&#39;oiel humain: preuve d&#39;un créateur!</a>
-        </h3>
-        <p class="video-card-summary">Avec 126 millions de photorécepteurs, un système d&#39;auto-nettoyage continu et un processeur neuronal traitant des millions de bits par seconde, l&#39;œil humain humilie nos meilleures caméras numériques.</p>
-        <div class="video-card-meta">
-          <span>10 Octobre 2026</span>
-          <a href="/videos/10-faits-fascinants-sur-l-oiel-humain-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" aria-label="Regarder 3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.">
-          <img src="https://i1.ytimg.com/vi/8JJFZ_rkqRk/hqdefault.jpg" alt="3 machines moleculaires dans la cellule: La preuve d&#39;un créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=adn-vivant" class="video-card-badge badge badge-gold">ADN et le vivant</a>
-        <span class="video-card-duration">8 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur">3 machines moleculaires dans la cellule: La preuve d&#39;un créateur.</a>
-        </h3>
-        <p class="video-card-summary">Kinésine, flagelle bactérien, ATP synthase : découvrez les moteurs rotatifs et les transporteurs nanoscopiques qui fonctionnent au cœur de vos cellules avec un rendement énergétique frôlant 100%.</p>
-        <div class="video-card-meta">
-          <span>8 Octobre 2026</span>
-          <a href="/videos/3-machines-moleculaires-dans-la-cellule-la-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" aria-label="Regarder Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur">
-          <img src="https://i3.ytimg.com/vi/Nte26WFswSU/hqdefault.jpg" alt="Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur" class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">9 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur">Les 3 boucliers invisibles de la Terre : Preuve d&#39;un Créateur</a>
-        </h3>
-        <p class="video-card-summary">Magnétosphère, couche d&#39;ozone, atmosphère protectrice : la Terre n&#39;est pas un rocher ordinaire, c&#39;est une oasis cosmique protégée par un triple blindage réglé pour préserver la vie contre l&#39;hostilité de l&#39;espace.</p>
-        <div class="video-card-meta">
-          <span>7 Octobre 2026</span>
-          <a href="/videos/les-3-boucliers-invisibles-de-la-terre-preuve-d-un-createur" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
-    <article class="video-card">
-      <div class="video-card-thumb-wrap">
-        <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" aria-label="Regarder 1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.">
-          <img src="https://i4.ytimg.com/vi/G7XhpPR3eWI/hqdefault.jpg" alt="1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur." class="video-card-thumb" loading="lazy">
-        </a>
-        <a href="themes.html?theme=cosmologie" class="video-card-badge badge badge-gold">Cosmologie</a>
-        <span class="video-card-duration">10 min de lecture</span>
-      </div>
-      <div class="video-card-body">
-        <h3 class="video-card-title">
-          <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve">1 chance sur 10^10^123 pour l&#39;entropie initiale de l&#39;univers: La preuve d&#39;un Créateur.</a>
-        </h3>
-        <p class="video-card-summary">Découvrez le calcul vertigineux du prix Nobel Roger Penrose : une chance sur 10 puissance 10 puissance 123 pour que le Big Bang démarre avec un degré d&#39;ordre aussi exceptionnel. Un nombre qui pulvérise définitivement l&#39;hypothèse du hasard.</p>
-        <div class="video-card-meta">
-          <span>5 Octobre 2026</span>
-          <a href="/videos/1-chance-sur-10-10-123-pour-l-entropie-initiale-de-l-univers-la-preuve" style="color: var(--gold-primary); font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
-            Lire & Voir →
-          </a>
-        </div>
-      </div>
-    </article>
-  
+<!-- VIDEOS_LIST_END -->
       </div>
 
     </div>
@@ -885,9 +295,9 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Réseaux sociaux</h4>
+          <h4 class="footer-col-title">Réseaux de la chaîne</h4>
           <div class="footer-social-list">
-            <a href="https://youtube.com/@legrandgeniedelacreation" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <a href="https://youtube.com/@immensegeniedanslunivers" target="_blank" rel="noopener noreferrer" class="social-btn">
               <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               <span>YouTube</span>
             </a>
@@ -904,12 +314,17 @@
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 Le Grand Génie de la Création. Présenté par Jean-Yves.</div>
-        <div><a href="sitemap.xml" style="color: var(--text-dim);">Plan du site</a></div>
+        <div>
+          © 2026 Le Grand Génie de la Création. Présenté par Jean-Yves.
+        </div>
+        <div>
+          <a href="sitemap.xml" style="color: var(--text-dim);">Plan du site (sitemap.xml)</a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="/data/videos.js"></script>
   <script src="/js/main.js"></script>
 </body>
