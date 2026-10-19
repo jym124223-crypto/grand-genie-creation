@@ -1346,6 +1346,10 @@ img {
   margin-bottom: 5rem;
 }
 
+.about-hero .portrait-img {
+  aspect-ratio: 4 / 5;
+}
+
 .about-pillars {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
