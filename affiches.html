@@ -236,7 +236,7 @@
 
         if (titleEl) titleEl.textContent = poster.title;
         if (metaEl) metaEl.textContent = poster.format || 'Format PDF HD';
-        if (thumbEl) thumbEl.src = poster.previewImage;
+        if (thumbEl) thumbEl.src = poster.previewWebp || poster.previewImage;
       }
 
       modal.classList.add('active');
@@ -270,7 +270,10 @@
         mount.innerHTML = AFFICHES.map(a => `
           <article class="poster-card" data-poster-id="${a.id}">
             <div class="poster-thumb-wrap">
-              <img src="${a.previewImage}" alt="${a.title}" class="poster-img" loading="lazy">
+              <picture>
+                <source srcset="${a.previewWebp || a.previewImage}" type="image/webp">
+                <img src="${a.previewImage}" alt="${a.title}" class="poster-img" loading="lazy">
+              </picture>
               <span class="poster-badge badge badge-gold">${a.theme || 'Infographie'}</span>
               <span class="poster-format-tag">${a.format ? a.format.split('—')[0].trim() : 'Format HD'}</span>
             </div>

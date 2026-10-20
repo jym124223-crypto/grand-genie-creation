@@ -249,7 +249,7 @@ function buildStaticVideoPage(video, allVideos, templateHtml) {
       <span>${escapeHtml(item)}</span>
     </li>
   `).join('');
-  html = html.replace(/<ul class="takeaways-list" id="takeaways-list">[\s\S]*?<\/ul>/i, `<ul class="takeaways-list" id="takeaways-list">${takeawaysHtml}</ul>`);
+  html = html.replace(/<ul class="takeaway[s]?-list" id="takeaways-list">[\s\S]*?<\/ul>/i, `<ul class="takeaway-list" id="takeaways-list">${takeawaysHtml}</ul>`);
 
   let writtenArticleHtml = video.content;
   if (!writtenArticleHtml || writtenArticleHtml.trim().length === 0) {
@@ -309,29 +309,26 @@ async function runBuild() {
   // Sauvegarde propre du cache dédupliqué
   fs.writeFileSync(CACHE_FILE, JSON.stringify(deduplicatedRawVideos, null, 2), 'utf8');
 
-  // 3. Fusion avec les données manuelles (Thème unique, Script, etc.)
+  // 3. Fusion avec les données manuelles officielles (Thème unique, Script, Titre officiel, etc.)
   const manualData = loadManualData();
 
   const processedVideos = deduplicatedRawVideos.map((raw, index) => {
-    const slug = slugify(raw.title);
-    const manual = manualData[raw.youtubeId] || manualData[slug] || {};
+    const manual = manualData[raw.youtubeId] || {};
+    const title = manual.officialTitle || raw.title;
+    const slug = slugify(title);
 
     // Chaque vidéo a UN SEUL thème
-    const themeObj = normalizeTheme(manual.theme) || autoDetectTheme(raw.title, raw.description);
+    const themeObj = normalizeTheme(manual.theme) || autoDetectTheme(title, raw.description);
     const dateFormatted = formatDateFr(raw.published);
 
     let summary = manual.summary;
     if (!summary) {
       const cleanDesc = raw.description ? raw.description.split('\n')[0].replace(/[\r\n]+/g, ' ').trim() : '';
-      summary = cleanDesc.length > 20 ? cleanDesc : `${raw.title} - Regardez l'enquête vidéo sur Le Grand Génie de la Création.`;
+      summary = cleanDesc.length > 20 ? cleanDesc : `${title} - Regardez l'enquête vidéo sur Le Grand Génie de la Création.`;
     }
 
-    const readTime = manual.readTime || '8 min de lecture';
-    const keyTakeaways = manual.keyTakeaways || [
-      'Examen rigoureux des données scientifiques observationnelles.',
-      'Démonstration claire réfutant le hasard aveugle au profit d\'un dessein ordonné.',
-      'Réflexion philosophique sur les qualités extraordinaires d\'un génie créateur.'
-    ];
+    const readTime = manual.readTime || '5 min de lecture';
+    const keyTakeaways = manual.keyTakeaways || manual.sections || [];
 
     let formattedDescription = '';
     if (raw.description) {
@@ -341,7 +338,7 @@ async function runBuild() {
     return {
       id: slug,
       slug: slug,
-      title: raw.title,
+      title: title,
       featured: index === 0,
       theme: themeObj.key,
       themeLabel: themeObj.label,

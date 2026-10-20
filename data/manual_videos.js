@@ -1,302 +1,420 @@
 /**
- * Fichier de personnalisation manuelle des vidéos
+ * Fichier des versions écrites officielles des vidéos
  * Chaîne : « Le Grand Génie de la Création »
  * 
- * GUIDE POUR AJOUTER OU MODIFIER UNE VIDÉO :
- * - La clé correspond soit à l'identifiant YouTube (ex: '2Qn-coJEddU'), soit au slug du titre.
- * - theme : Choisissez parmi 'Cosmologie', 'ADN et vivant', 'Physique', ou 'Grands scientifiques'
- * - readTime : Durée de lecture estimée (ex: '8 min de lecture')
- * - summary : Résumé personnalisé (optionnel, sinon utilise la description YouTube)
- * - keyTakeaways : Tableau de 3 points clés à retenir (optionnel)
- * - script : Contenu complet de la version écrite avec balises HTML (<h2>, <p>, <blockquote>, <ul>, etc.)
+ * Textes officiels rédigés par Jean-Yves, issus directement de ses scripts (articles-videos.md).
+ * Aucune phrase inventée ou modifiée.
  */
 
 module.exports = {
-  // 1. PRIX NOBEL DE MEDECINE 2026 : le code caché qui pointe vers un génie créateur!
-  "2Qn-coJEddU": {
-    theme: "ADN et vivant",
-    readTime: "8 min de lecture",
-    summary: "Plongée vertigineuse au cœur de la cellule : quand les nanomachines biologiques, la densité d'information numérique de l'ADN et les mécanismes d'auto-réparation défient les explications matérialistes et pointent vers un Génie programmateur.",
-    keyTakeaways: [
-      "L'ADN stocke l'information avec une densité un milliard de fois supérieure à nos disques durs de pointe.",
-      "Les machines moléculaires comme les polymérases possèdent des systèmes de relecture et de correction d'erreurs comparables aux algorithmes informatiques les plus sophistiqués.",
-      "Partout dans l'expérience humaine, un code informatique ou textuel provient invariablement d'un esprit intelligent."
-    ],
-    script: `
-      <p class="article-lead">
-        Lorsque James Watson et Francis Crick ont identifié la structure en double hélice de l'ADN en 1953, ils n'ont pas seulement découvert une molécule chimique. Sans s'en rendre pleinement compte sur le moment, ils ont mis au jour le système de traitement de l'information le plus sophistiqué, le plus dense et le plus robuste de tout l'univers connu.
-      </p>
-
-      <h2>1. Une densité d'information qui humilie notre technologie</h2>
-      <p>
-        Imaginez un instant que vous deviez stocker l'intégralité des connaissances humaines accumulées depuis l'aube de la civilisation : chaque livre imprimé, chaque film tourné, chaque fichier informatique, chaque recherche scientifique. Avec notre technologie sur silicium la plus avancée, il nous faudrait d'immenses centres de données de plusieurs hectares, consommant des mégawatts d'électricité.
-      </p>
-      <p>
-        Dans le vivant, la réponse est tout autre : <strong>un seul gramme d'ADN peut théoriquement contenir jusqu'à 215 pétaoctets de données</strong>. Cela équivaut à 215 millions de gigaoctets dans un volume plus petit qu'une tête d'épingle. Mais la prouesse ne s'arrête pas au stockage ; elle réside dans son architecture logique.
-      </p>
-
-      <blockquote class="article-quote">
-        « La biologie est l'étude de choses compliquées qui donnent l'impression d'avoir été conçues pour un but précis. »
-        <cite>— Richard Dawkins, biologiste</cite>
-      </blockquote>
-
-      <h2>2. Le code génétique : un langage formel à 4 lettres</h2>
-      <p>
-        L'ADN n'est pas une simple chaîne de matière inerte réagissant passivement. C'est un code quaternaire digital composé de quatre bases azotées : l'Adénine (A), la Thymine (T), la Cytosine (C) et la Guanine (G). Exactement comme le binaire (0 et 1) commande les logiciels de nos ordinateurs, des triplets de ces bases (les codons) dictent précisément l'assemblage des 20 acides aminés qui formeront les protéines indispensables à la vie.
-      </p>
-      <p>
-        Or, en théorie de l'information, une règle universelle n'a jamais été prise en défaut : <em>une information symbolique complexe et spécifiée ne naît jamais du hasard aveugle ou des simples lois de la chimie inorganique</em>. La physique et la chimie expliquent le support (le papier et l'encre, ou la molécule de sucre et de phosphate), mais elles n'expliquent pas le message (la phrase écrite sur le papier). Le message transcende son support.
-      </p>
-
-      <h2>3. Les nanomachines d'édition et la réparation en temps réel</h2>
-      <p>
-        Ce qui bouleverse encore davantage les observateurs attentifs, c'est ce qui se produit lors de la réplication de l'ADN. Des enzymes spécialisées avancent à une vitesse stupéfiante tout en effectuant un travail de relecture d'une précision chirurgicale :
-      </p>
-      <ul>
-        <li><strong>L'Hélicase</strong> : un moteur moléculaire qui déroule la double hélice à des centaines de tours par seconde sans jamais rompre la chaîne.</li>
-        <li><strong>L'ADN Polymérase</strong> : un copieur ultra-rapide qui ne commet qu'une erreur pour 100 000 bases insérées.</li>
-        <li><strong>Les complexes de réparation (Mismatch Repair)</strong> : un véritable antivirus intégré qui patrouille, détecte l'erreur, découpe la mauvaise base et la remplace, portant le taux de fidélité finale à une seule erreur pour un milliard de bases !</li>
-      </ul>
-
-      <div class="article-callout">
-        <h4>Le paradoxe de la poule et de l'œuf moléculaire</h4>
-        <p>
-          Pour fabriquer des protéines, la cellule a impérativement besoin des instructions encodées dans l'ADN. Mais pour lire, transcrire et répliquer l'ADN, la cellule a impérativement besoin de protéines et d'enzymes déjà pleinement formées. Aucun des deux systèmes ne peut fonctionner sans l'autre. Comment un tel système interdépendant aurait-il pu s'échafauder pas à pas par des processus non guidés ?
-        </p>
-      </div>
-
-      <h2>4. La conclusion qui s'impose à l'esprit rationnel</h2>
-      <p>
-        Quand vous marchez sur une plage et trouvez écrit dans le sable : <em>« Jean-Yves était ici ce matin »</em>, vous ne concluez jamais que le va-et-vient des vagues ou le souffle du vent ont arrangé les grains de silice de cette manière. Vous reconnaissez instantanément la trace d'un esprit intelligent capable de conceptualisation.
-      </p>
-      <p>
-        Au cœur de chacune des 30 000 milliards de cellules de votre corps se trouve une bibliothèque de 3,2 milliards de lettres d'instructions d'une perfection inouïe. La science ne détruit pas l'émerveillement : elle dévoile la signature indéniable d'un Grand Génie de la Création.
-      </p>
-    `
-  },
-
-  // 2. Kepler, Newton, Maxwell: 3 Géants de la science qui croyaient en un Créateur
-  "slei71ya6Pc": {
-    theme: "Grands scientifiques",
-    readTime: "11 min de lecture",
-    summary: "Loin d'opposer foi et science, les pères de la révolution scientifique moderne cherchaient à « penser les pensées de Dieu après Lui ». Retour sur les écrits et manuscrits originaux de Newton, Kepler et Maxwell.",
-    keyTakeaways: [
-      "La révolution scientifique moderne est née dans un terreau intellectuel qui postulait un univers ordonné et intelligible créé par un Esprit rationnel.",
-      "Isaac Newton considérait la gravitation comme la démonstration éclatante d'un gouvernement intelligent du système solaire.",
-      "Johannes Kepler et James Clerk Maxwell puisaient leur motivation de recherche dans l'émerveillement face aux lois divines."
-    ],
-    script: `
-      <p class="article-lead">
-        Une idée reçue moderne voudrait faire croire que la démarche scientifique s'est construite en opposition à la notion d'un Créateur intelligent. L'Histoire des sciences raconte pourtant une trajectoire exactement inverse : c'est précisément parce que les premiers savants croyaient en un Législateur rationnel qu'ils ont osé chercher des lois dans la nature.
-      </p>
-
-      <h2>1. Isaac Newton et le système du monde</h2>
-      <p>
-        Considéré comme l'un des plus grands esprits de tous les temps, Sir Isaac Newton n'a pas rédigé ses <em>Principia Mathematica</em> pour exclure Dieu du réel. Dans le célèbre « Scolie Général » de son œuvre maîtresse, il écrit :
-      </p>
-      <blockquote class="article-quote">
-        « Cet arrangement si magnifique du soleil, des planètes et des comètes n'a pu être le produit que du conseil et de la domination d'un Être puissant et intelligent. »
-        <cite>— Isaac Newton, Principia Mathematica (1687)</cite>
-      </blockquote>
-
-      <h2>2. Johannes Kepler : penser les pensées du Créateur</h2>
-      <p>
-        Lorsque Kepler découvre les lois mathématiques décrivant les orbites elliptiques des planètes, il est submergé par une joie mystique et intellectuelle. Dans son traité <em>Harmonices Mundi</em>, il s'exclame :
-      </p>
-      <blockquote class="article-quote">
-        « Je Vous rends grâce, Créateur et Seigneur, de m'avoir accordé cette joie dans Votre création, ce ravissement devant les œuvres de Vos mains... J'ai simplement pensé Vos pensées après Vous. »
-        <cite>— Johannes Kepler</cite>
-      </blockquote>
-
-      <h2>3. James Clerk Maxwell et Max Planck : la continuité de l'esprit</h2>
-      <p>
-        Au XIXe et XXe siècles, la tradition s'est poursuivie avec James Clerk Maxwell (qui a unifié l'électricité, le magnétisme et l'optique) et Max Planck (père de la mécanique quantique). Tous deux rejetaient le matérialisme réducteur et considéraient la conscience et l'esprit comme la matrice première de la matière.
-      </p>
-      <p>
-        Étudier la science, c'est contempler le chef-d'œuvre à la loupe. Loin d'éteindre l'admiration pour le Génie créateur, la rigueur scientifique l'amplifie et lui donne des fondements inébranlables.
-      </p>
-    `
-  },
-
-  // 3. LE PRIX NOBEL DE PHYSIQUE 2026 : Détection des neutrinos et les preuves de l'existence du Créateur.
-  "UoxYZlJpPJ8": {
-    theme: "Physique",
-    readTime: "9 min de lecture",
-    summary: "Comment prouver l'existence de ce qui échappe à nos sens directs ? Quand la physique quantique et la détection des neutrinos révèlent que l'invisible soutient et orchestre toute la matière visible.",
-    keyTakeaways: [
-      "Des centaines de milliards de neutrinos traversent chaque centimètre carré de notre corps chaque seconde sans interagir avec la matière.",
-      "La science contemporaine prouve constamment la réalité d'entités invisibles par l'exactitude de leurs signatures et de leurs effets mesurables.",
-      "L'existence d'un Créateur immatériel et transcendant s'inscrit parfaitement dans cette logique scientifique : nous contemplons Ses signatures gravées dans les lois cosmiques."
-    ],
-    script: `
-      <p class="article-lead">
-        Des milliards de particules fantômes traversent votre corps chaque seconde sans que vous ne ressentiez le moindre choc. La détection des neutrinos a représenté l'un des plus grands défis de l'histoire de la physique expérimentale : comment prouver l'existence d'une particule sans charge, presque sans masse et totalement invisible ?
-      </p>
-
-      <h2>1. La physique de l'invisible</h2>
-      <p>
-        Pendant des décennies, le neutrino n'était qu'une prédiction théorique formulée par Wolfgang Pauli pour préserver la loi de conservation de l'énergie dans la désintégration bêta. Personne ne l'avait vu, touché ou photographié. Pourtant, la communauté scientifique avait la certitude mathématique qu'il existait.
-      </p>
-      <p>
-        Il aura fallu construire de gigantesques détecteurs souterrains, enfouis à des kilomètres sous terre dans d'anciennes mines, remplis de milliers de tonnes d'eau ultra-pure et bardés de photomultiplicateurs, pour observer enfin les minuscules éclairs de lumière Tcherenkov attestant du passage d'un neutrino.
-      </p>
-
-      <blockquote class="article-quote">
-        « La première gorgée dans le verre des sciences naturelles vous rendra athée, mais au fond du verre, Dieu vous attend. »
-        <cite>— Werner Heisenberg, prix Nobel de physique</cite>
-      </blockquote>
-
-      <h2>2. L'analogie fondamentale : connaître l'invisible par ses effets</h2>
-      <p>
-        Les sceptiques demandent souvent : <em>« Si Dieu existe, pourquoi ne pouvons-nous pas Le voir directement ? »</em>. Mais la physique moderne nous apprend que les réalités les plus puissantes et les plus fondamentales de la nature — les champs quantiques, l'énergie noire, la courbure de l'espace-temps, les neutrinos — sont par essence invisibles à nos yeux nus.
-      </p>
-      <p>
-        Nous ne doutons pas de la gravité parce que nous voyons tomber la pomme. De la même façon, la raison humaine n'a pas besoin de matérialiser le Créateur pour constater la signature éclatante de Son esprit dans la symétrie des lois quantiques et l'ajustement millimétré de la physique.
-      </p>
-    `
-  },
-
-  // 4. 10 faits fascinants sur l'oiel humain: preuve d'un créateur!
-  "Vv1L9zfWo9w": {
-    theme: "ADN et vivant",
-    readTime: "8 min de lecture",
-    summary: "Avec 126 millions de photorécepteurs, un système d'auto-nettoyage continu et un processeur neuronal traitant des millions de bits par seconde, l'œil humain humilie nos meilleures caméras numériques.",
-    keyTakeaways: [
-      "L'œil humain est capable de détecter un photon unique dans l'obscurité totale.",
-      "Le cristallin modifie sa courbure en une fraction de seconde grâce à des muscles ciliaires effectuant plus de 100 000 mouvements par jour.",
-      "Charles Darwin lui-même admettait que supposer que l'œil puisse s'être formé par sélection naturelle semblait « absurde au plus haut point »."
-    ],
-    script: `
-      <p class="article-lead">
-        Nos ingénieurs les plus brillants mettent des années à concevoir des caméras numériques haute définition capables de stabiliser l'image et d'équilibrer la lumière. Pourtant, aucun appareil moderne n'approche la polyvalence, la réactivité et la sensibilité de l'œil humain.
-      </p>
-
-      <h2>1. Une merveille optique et biologique</h2>
-      <p>
-        Chaque œil contient plus de 120 millions de bâtonnets ultrasensibles à la lumière et environ 6 à 7 millions de cônes dédiés à la vision chromatique des couleurs. Cette matrice vivante fonctionne 24 heures sur 24, sans surchauffe, avec un rafraîchissement d'image continu et une plage dynamique qui surpasse les meilleurs capteurs HDR du marché.
-      </p>
-
-      <h2>2. L'aveu de Charles Darwin</h2>
-      <p>
-        Dans <em>L'Origine des espèces</em>, Charles Darwin consacra un passage célèbre à la difficulté insurmontable que posait l'œil à sa théorie :
-      </p>
-      <blockquote class="article-quote">
-        « Supposer que l'œil, avec toutes ses inimitables dispositions pour ajuster le foyer à diverses distances, pour admettre différentes quantités de lumière et pour corriger les aberrations sphérique et chromatique, ait pu être formé par la sélection naturelle, semble, je l'avoue librement, absurde au plus haut point. »
-        <cite>— Charles Darwin, L'Origine des espèces (Chapitre 6)</cite>
-      </blockquote>
-
-      <h2>3. Traitement neuronal instantané</h2>
-      <p>
-        L'œil n'est pas seulement un objectif optique : c'est une extension directe du cerveau. Avant même que le signal n'atteigne le cortex visuel par le nerf optique, des couches de cellules ganglionnaires et bipolaires effectuent une première compression de données et un détourage des contrastes d'une complexité algorithmique inouïe.
-      </p>
-    `
-  },
-
-  // 5. 3 machines moleculaires dans la cellule: La preuve d'un créateur.
-  "8JJFZ_rkqRk": {
-    theme: "ADN et vivant",
-    readTime: "8 min de lecture",
-    summary: "Kinésine, flagelle bactérien, ATP synthase : découvrez les moteurs rotatifs et les transporteurs nanoscopiques qui fonctionnent au cœur de vos cellules avec un rendement énergétique frôlant 100%.",
-    keyTakeaways: [
-      "La kinésine est un véritable robot bipède qui transporte des vésicules le long des microtubules cellulaires pas à pas.",
-      "Le flagelle bactérien est un moteur hors-bord réversible tournant jusqu'à 100 000 tours par minute.",
-      "Ces mécanismes démontrent une complexité irréductible : toutes les pièces doivent être opérationnelles simultanément pour que le moteur fonctionne."
-    ],
-    script: `
-      <p class="article-lead">
-        Lorsque vous observez la cellule vivante au microscope électronique, le mythe de la « simple masse gélatineuse de protoplasme » s'effondre définitivement. La cellule est en réalité une métropole industrielle hyper-automatisée, sillonnée par des moteurs nanoscopiques et des chaînes de montage robotisées.
-      </p>
-
-      <h2>1. La Kinésine : le livreur infatigable</h2>
-      <p>
-        La kinésine est une protéine motrice dotée de deux « pieds » moléculaires. Elle avance le long des microtubules cellulaires en effectuant des pas réguliers de 8 nanomètres tout en transportant des charges des milliers de fois plus massives qu'elle. Son mouvement est parfaitement coordonné par l'hydrolyse séquentielle de molécules d'ATP.
-      </p>
-
-      <h2>2. Le Flagelle Bactérien : un moteur rotatif haute vitesse</h2>
-      <p>
-        Certaines bactéries se déplacent grâce à un véritable moteur électrique rotatif : stator, rotor, arbre de transmission, joint universel et hélice propulsive. Ce moteur peut tourner jusqu'à 100 000 tours par minute et inverser son sens de rotation en un quart de tour !
-      </p>
-
-      <h2>3. Complexité irréductible</h2>
-      <p>
-        Comme l'a démontré le biochimiste Michael Behe, si vous retirez une seule pièce de ce moteur (la bague d'étanchéité, l'arbre ou le commutateur), le système ne fonctionne plus à 50% ou 10% : il cesse purement et simplement de fonctionner. L'ingénierie suprême visible dans le vivant ne peut s'expliquer par de lentes mutations aléatoires non guidées.
-      </p>
-    `
-  },
-
-  // 6. Les 3 boucliers invisibles de la Terre : Preuve d'un Créateur
-  "Nte26WFswSU": {
-    theme: "Cosmologie",
-    readTime: "9 min de lecture",
-    summary: "Magnétosphère, couche d'ozone, atmosphère protectrice : la Terre n'est pas un rocher ordinaire, c'est une oasis cosmique protégée par un triple blindage réglé pour préserver la vie contre l'hostilité de l'espace.",
-    keyTakeaways: [
-      "Le noyau métallique liquide de la Terre génère une dynamo magnétique géante qui dévie les vents solaires mortels.",
-      "La couche d'ozone intercepte précisément les rayons ultraviolets UVC et UVB destructeurs pour l'ADN.",
-      "L'épaisseur et la composition de l'atmosphère consument des millions de météoroïdes chaque jour tout en maintenant une température clémente par un effet de serre équilibré."
-    ],
-    script: `
-      <p class="article-lead">
-        L'espace interstellaire est un milieu d'une violence inouïe : rayonnements cosmiques ionisants, tempêtes solaires de plasma ardent, températures proches du zéro absolu et bombardements de débris météoritiques. Au milieu de ce désert létal, notre planète bleue ressemble à un vaisseau spatial hyper-sécurisé.
-      </p>
-
-      <h2>1. Le premier bouclier : la Magnétosphère</h2>
-      <p>
-        Au centre de la Terre, la convection de milliers de milliards de tonnes de fer et de nickel en fusion crée un puissant champ magnétique dipolaire. Cette bulle magnétique dévie le vent solaire mortel à des dizaines de milliers de kilomètres dans l'espace, donnant naissance au spectacle des aurores boréales. Sans ce bouclier magnétique, notre atmosphère aurait été arrachée dans l'espace, comme ce fut le cas pour Mars.
-      </p>
-
-      <h2>2. Le deuxième bouclier : la Couche d'Ozone</h2>
-      <p>
-        Dans la stratosphère, entre 20 et 30 kilomètres d'altitude, des molécules d'ozone (O₃) absorbent avec une sélectivité impressionnante les rayons ultraviolets hautement énergétiques. Si ces rayons atteignaient la surface, la double hélice d'ADN de toute cellule vivante serait déchiquetée en quelques minutes.
-      </p>
-
-      <h2>3. Le troisième bouclier : l'Atmosphère protectrice</h2>
-      <p>
-        Chaque jour, plus de 100 tonnes de poussières et de météoroïdes foncent vers la Terre à des vitesses atteignant 70 km/s. Grâce à la densité et à l'épaisseur idéale de notre atmosphère gazeuse (78% d'azote, 21% d'oxygène), l'immense majorité de ces bolides se désintègre par frottement thermique sous forme d'étoiles filantes avant de toucher le sol.
-      </p>
-    `
-  },
-
-  // 7. 1 chance sur 10^10^123 pour l'entropie initiale de l'univers: La preuve d'un Créateur.
+  // L'entropie et le départ extraordinaire de l'Univers
   "G7XhpPR3eWI": {
+    officialTitle: "L'entropie et le départ extraordinaire de l'Univers",
     theme: "Cosmologie",
-    readTime: "10 min de lecture",
-    summary: "Découvrez le calcul vertigineux du prix Nobel Roger Penrose : une chance sur 10 puissance 10 puissance 123 pour que le Big Bang démarre avec un degré d'ordre aussi exceptionnel. Un nombre qui pulvérise définitivement l'hypothèse du hasard.",
-    keyTakeaways: [
-      "La deuxième loi de la thermodynamique impose que l'entropie (le désordre) augmente inexorablement au fil du temps.",
-      "Pour que l'univers soit structuré aujourd'hui, le Big Bang devait démarrer dans un état d'entropie incroyablement basse.",
-      "Sir Roger Penrose a calculé que la probabilité d'obtenir cet état initial par pur hasard est de 1 sur 10^(10^123) — un nombre dont on ne pourrait même pas écrire tous les zéros dans l'univers observable."
-    ],
+    readTime: "5 min de lecture",
+    summary: "Pourquoi le temps avance-t-il toujours dans le même sens ? Et à quel point l'Univers a-t-il dû commencer de façon particulière pour mener jusqu'à nous ? Roger Penrose a tenté de le mesurer. Le résultat donne le vertige.",
+    sections: [
+      "L'entropie, ou pourquoi le temps a une direction",
+      "Un début très particulier",
+      "Le calcul de Roger Penrose",
+      "Ce que nous apprend James Webb",
+      "Ma réflexion"
+],
     script: `
-      <p class="article-lead">
-        S'il existe un argument en physique mathématique qui laisse sans voix même les esprits les plus sceptiques, c'est bien celui de l'entropie initiale de notre cosmos. Ce n'est pas une spéculation philosophique, mais le résultat d'un calcul rigoureux mené par l'un des plus grands mathématiciens et physiciens de notre époque : Sir Roger Penrose, prix Nobel de physique.
-      </p>
+      <p class="article-lead"><em>Pourquoi le temps avance-t-il toujours dans le même sens ? Et à quel point l'Univers a-t-il dû commencer de façon particulière pour mener jusqu'à nous ? Roger Penrose a tenté de le mesurer. Le résultat donne le vertige.</em></p>
 
-      <h2>1. La deuxième loi de la thermodynamique et la flèche du temps</h2>
-      <p>
-        Tout dans la nature tend spontanément vers le désordre : une tasse de café refroidit, un château de sable s'effondre sous le vent, les étoiles brûlent leur hydrogène et la poussière se disperse. C'est le principe fondamental de l'entropie croissante.
-      </p>
-      <p>
-        Par conséquent, plus on remonte dans le passé vers l'instant zéro du Big Bang, plus l'entropie devait être basse et le degré d'ordre et de précision devait être gigantesque.
-      </p>
+      <h2>L'entropie, ou pourquoi le temps a une direction</h2>
+      <p>On entend souvent que l'entropie, c'est le désordre. C'est une bonne image de départ, mais la physique est plus subtile. L'entropie mesure le nombre de façons dont la matière et l'énergie peuvent s'organiser. Plus il existe de façons possibles, plus l'entropie est élevée.</p>
+      <p>Et l'entropie a une habitude : elle augmente. C'est ce qui donne au temps sa direction, ce que les physiciens appellent la flèche du temps. Un verre peut tomber et se briser en mille morceaux. Personne n'a jamais vu ces morceaux remonter tout seuls sur la table pour reformer le verre. Le passé et le futur ne se comportent pas de la même manière.</p>
 
-      <blockquote class="article-quote">
-        « Pour produire un univers ressemblant au nôtre, le Créateur a dû viser un volume de l'espace des phases d'à peine 1 part pour 10^(10^123). C'est une précision extraordinaire. »
-        <cite>— Sir Roger Penrose, The Emperor's New Mind</cite>
-      </blockquote>
+      <h2>Un début très particulier</h2>
+      <p>Si l'entropie augmente sans cesse, elle devait être très basse au commencement. Remontons donc jusqu'au début de l'Univers. Il était extrêmement chaud et extrêmement dense. Mais un détail surprend les physiciens : la matière y était répartie de façon presque parfaitement uniforme.</p>
+      <p>Pour la gravité, cette uniformité est un état très ordonné, donc très improbable. Et c'est précisément cet état de départ qui a permis à l'Univers d'évoluer ensuite : la gravité a pu rassembler peu à peu la matière en galaxies, en étoiles, en planètes, et finalement rendre la vie possible.</p>
 
-      <h2>2. Visualiser le nombre 10^(10^123)</h2>
-      <p>
-        Ce nombre est tellement colossal qu'il défie l'imagination humaine :
-      </p>
-      <ul>
-        <li>Le nombre total d'atomes dans tout l'univers observable est estimé à environ <strong>10<sup>80</sup></strong>.</li>
-        <li>Si vous preniez chaque proton, chaque neutron et chaque électron de tout l'univers et écriviez un zéro sur chacun d'eux, vous seriez infiniment loin d'avoir assez d'encre pour écrire tous les zéros de ce chiffre !</li>
-      </ul>
+      <h2>Le calcul de Roger Penrose</h2>
+      <p>Roger Penrose, physicien et mathématicien britannique, lauréat du prix Nobel de physique en 2020, s'est posé une question simple : à quel point cet état initial était-il particulier ?</p>
+      <p>Sa réponse est devenue célèbre : une chance sur 10 puissance 10 puissance 123. Ce nombre dépasse toute imagination. Écrire seulement tous ses zéros demanderait plus de place qu'il n'y a d'atomes dans l'Univers observable.</p>
+      <p>Imaginez un nombre inconcevable de façons possibles de démarrer un univers. Parmi elles, une infime fraction seulement mène à un Univers comme le nôtre, capable de produire des galaxies, des étoiles, des planètes et la vie. C'est ce que le calcul de Penrose cherche à illustrer.</p>
 
-      <h2>3. La conclusion inéluctable</h2>
-      <p>
-        Parler de « coup de chance » ou de « coïncidence » devant un chiffre pareil n'a plus aucun sens scientifique ou rationnel. Quand une aiguille vise une cible avec une précision de 1 sur 10<sup>10<sup>123</sup></sup>, cela ne relève pas de la loterie cosmique : c'est la démonstration mathématique incontestable d'un Grand Génie de la Création ayant choisi délibérément les paramètres initiaux de la réalité.
-      </p>
+      <h2>Ce que nous apprend James Webb</h2>
+      <p>Prenons un exemple concret. Le télescope spatial James Webb était trop grand pour être lancé déployé. Il a fallu le plier : son miroir, son immense pare-soleil, tout. Une fois dans l'espace, à environ 1,5 million de kilomètres de la Terre, tout devait se déployer dans un ordre précis, sans aucune possibilité de réparation.</p>
+      <p>La NASA avait identifié 344 points de défaillance unique : 344 étapes dont l'échec pouvait compromettre la mission. Pendant des années, les ingénieurs ont calculé, testé, simulé et prévu des scénarios de secours. Ils savaient qu'une configuration de départ précise était indispensable pour atteindre le résultat final.</p>
+      <p>Devant James Webb, personne ne doute qu'une intelligence l'a conçu, avec un objectif en tête.</p>
+
+      <h2>Ma réflexion</h2>
+      <p>Je ne prétends pas que James Webb prouve scientifiquement l'existence de Dieu. Je partage ici ma conviction personnelle. Quand je regarde l'état initial extraordinairement précis de l'Univers, suivi de lois physiques qui le mènent jusqu'à la matière complexe, aux étoiles et à la vie, j'y vois quelque chose qui ressemble à une conception.</p>
+      <p>Si nous reconnaissons l'intelligence derrière James Webb, pourquoi ne pas envisager une intelligence derrière les conditions initiales de l'Univers ? Pour moi, cette intelligence, c'est le Créateur.</p>
     `
-  }
+  },
+
+  // Les trois boucliers qui protègent la vie sur Terre
+  "Nte26WFswSU": {
+    officialTitle: "Les trois boucliers qui protègent la vie sur Terre",
+    theme: "Cosmologie",
+    readTime: "5 min de lecture",
+    summary: "L'espace est un endroit hostile. Si la vie existe sur notre planète, c'est grâce à trois protections emboîtées les unes dans les autres : l'héliosphère, le champ magnétique et l'atmosphère.",
+    sections: [
+      "Une planète exceptionnelle",
+      "Premier bouclier : l'héliosphère",
+      "Deuxième bouclier : le champ magnétique",
+      "Troisième bouclier : l'atmosphère",
+      "Ma réflexion"
+],
+    script: `
+      <p class="article-lead"><em>L'espace est un endroit hostile. Si la vie existe sur notre planète, c'est grâce à trois protections emboîtées les unes dans les autres : l'héliosphère, le champ magnétique et l'atmosphère.</em></p>
+
+      <h2>Une planète exceptionnelle</h2>
+      <p>Devant l'immensité de l'Univers, on peut se sentir minuscule. Pourtant, plus on étudie la Terre, plus on réalise à quel point elle est exceptionnelle. Pour que la vie existe, l'eau et la lumière ne suffisent pas. Il faut aussi survivre aux radiations, aux vents solaires et aux débris qui traversent l'espace.</p>
+
+      <h2>Premier bouclier : l'héliosphère</h2>
+      <p>Notre première protection commence bien au-delà de la Terre. Le Soleil souffle en permanence un vent de particules, le vent solaire. Ce vent crée une immense bulle autour de tout le système solaire : l'héliosphère.</p>
+      <p>Cette bulle repousse une grande partie des rayons cosmiques venus de la galaxie, ces particules très énergétiques produites notamment par les explosions d'étoiles. Sans elle, notre système solaire serait beaucoup plus exposé à ces radiations.</p>
+
+      <h2>Deuxième bouclier : le champ magnétique</h2>
+      <p>Le Soleil nous protège, mais il est aussi une menace. Ses éruptions projettent des particules avec une violence inouïe. C'est ici qu'intervient le champ magnétique terrestre.</p>
+      <p>Il est produit par le métal en fusion qui circule au cœur de notre planète. Ce champ invisible dévie le vent solaire et le force à contourner la Terre, un peu comme la proue d'un navire fend les vagues. Les aurores boréales sont la trace visible de cette rencontre, quand une partie des particules est canalisée vers les pôles.</p>
+      <p>Mars nous montre ce qui arrive sans cette protection. La planète rouge a perdu son champ magnétique global il y a longtemps, et le vent solaire a emporté une grande partie de son atmosphère.</p>
+
+      <h2>Troisième bouclier : l'atmosphère</h2>
+      <p>Notre dernière protection est l'atmosphère. Elle nous donne l'air que nous respirons, et elle nous protège de deux façons.</p>
+      <p>La couche d'ozone bloque la majeure partie des rayons ultraviolets du Soleil, qui endommageraient l'ADN des êtres vivants. Plus haut, la mésosphère agit comme un incinérateur naturel. Chaque jour, des quantités de petits débris spatiaux foncent vers la Terre et brûlent en traversant l'atmosphère. Ce que nous voyons, ce sont des étoiles filantes.</p>
+
+      <h2>Ma réflexion</h2>
+      <p>L'héliosphère, le champ magnétique et l'atmosphère : trois boucliers imbriqués, chacun couvrant une menace différente. Si l'un d'eux venait à faillir, la vie sur Terre serait gravement menacée.</p>
+      <p>Devant un tel agencement, je ne peux pas y voir le fruit du hasard aveugle. J'y vois une intention, celle d'une intelligence qui a conçu notre planète comme un sanctuaire protégé au milieu de l'espace.</p>
+    `
+  },
+
+  // Trois machines moléculaires dans vos cellules
+  "8JJFZ_rkqRk": {
+    officialTitle: "Trois machines moléculaires dans vos cellules",
+    theme: "ADN et vivant",
+    readTime: "5 min de lecture",
+    summary: "Des moteurs, des turbines, des transporteurs qui marchent : ce n'est pas de la science-fiction. Ces machines fonctionnent en ce moment même, par millions, à l'intérieur de votre corps.",
+    sections: [
+      "Une usine de haute technologie",
+      "Machine numéro 1 : la kinésine, le transporteur",
+      "Machine numéro 2 : la mitochondrie et sa turbine",
+      "Machine numéro 3 : le moteur flagellaire, le propulseur",
+      "La complexité irréductible",
+      "Ma réflexion"
+],
+    script: `
+      <p class="article-lead"><em>Des moteurs, des turbines, des transporteurs qui marchent : ce n'est pas de la science-fiction. Ces machines fonctionnent en ce moment même, par millions, à l'intérieur de votre corps.</em></p>
+
+      <h2>Une usine de haute technologie</h2>
+      <p>La cellule humaine ressemble à une usine. On y trouve un centre d'information, l'ADN, qui contient les instructions pour bâtir et entretenir un être vivant. Et on y trouve des machines moléculaires : des assemblages de protéines avec des pièces mobiles, des moteurs et des rotors. En voici trois.</p>
+
+      <h2>Machine numéro 1 : la kinésine, le transporteur</h2>
+      <p>Imaginez une métropole où il faut livrer du matériel d'un point à un autre en permanence. Dans la cellule, ce travail est fait par la kinésine.</p>
+      <p>Elle saisit une cargaison, souvent bien plus grosse qu'elle, et la transporte en marchant, littéralement. Elle possède deux petites « jambes » qui avancent l'une après l'autre sur des routes cellulaires appelées microtubules. Chaque pas mesure 8 nanomètres, et chaque pas consomme une molécule d'énergie.</p>
+      <p>À notre échelle, ce serait comme un coureur portant un sac à dos énorme, qui sait exactement où livrer son chargement sans jamais se perdre.</p>
+
+      <h2>Machine numéro 2 : la mitochondrie et sa turbine</h2>
+      <p>Chacune de nos cellules possède ses petites centrales électriques : les mitochondries. Elles transforment ce que nous mangeons en une énergie que la cellule peut utiliser, l'ATP. On peut voir l'ATP comme une petite batterie rechargeable.</p>
+      <p>Pour comprendre comment elle est fabriquée, pensez à un barrage hydroélectrique. Derrière le mur, l'eau s'accumule. Cette différence de niveau est une réserve d'énergie.</p>
+      <p>Dans la mitochondrie, l'énergie de nos aliments sert à pomper des protons d'un côté d'une membrane. On crée ainsi un réservoir de protons. Ces protons veulent revenir de l'autre côté, mais ils ne peuvent passer que par une porte : l'ATP synthase. En la traversant, ils la font tourner comme l'eau fait tourner la turbine d'un barrage. Et cette rotation sert à fabriquer l'ATP.</p>
+      <p>Cette énergie alimente ensuite tout notre corps : nos muscles, nos cellules, la réparation de nos tissus. Ce qui frappe, c'est l'organisation du système entier, où chaque étape prépare la suivante.</p>
+
+      <h2>Machine numéro 3 : le moteur flagellaire, le propulseur</h2>
+      <p>Certaines bactéries se déplacent grâce à un long filament, le flagelle. Ce filament n'ondule pas au hasard : il est attaché à un véritable moteur rotatif.</p>
+      <p>Ce moteur est construit avec une quarantaine de types de pièces protéiques. Il possède un stator, un rotor, un arbre de transmission et une sorte de joint universel qui relie le moteur à l'hélice. Chez certaines bactéries, il peut tourner jusqu'à 100 000 tours par minute, et il peut changer de sens de rotation en une fraction de seconde.</p>
+
+      <h2>La complexité irréductible</h2>
+      <p>C'est ici qu'intervient un argument central du dessein intelligent : la complexité irréductible. Retirez une seule pièce essentielle de ce moteur, et il ne tourne pas moins vite. Il ne fonctionne plus du tout.</p>
+      <p>D'où une question : comment un tel système aurait-il pu s'assembler par une lente série d'accidents, s'il n'apporte aucun avantage avant d'être complet ?</p>
+
+      <h2>Ma réflexion</h2>
+      <p>Des transporteurs qui marchent, des turbines, des moteurs d'une précision inouïe. Devant une telle complexité, j'ai la conviction profonde que nous observons l'œuvre d'un Créateur à l'intelligence immense.</p>
+    `
+  },
+
+  // L'œil humain, un chef-d'œuvre de précision
+  "Vv1L9zfWo9w": {
+    officialTitle: "L'œil humain, un chef-d'œuvre de précision",
+    theme: "ADN et vivant",
+    readTime: "5 min de lecture",
+    summary: "Une résolution comparable aux meilleures caméras, des millions de couleurs, une mise au point instantanée et un cerveau qui corrige l'image en permanence. Voici dix raisons d'être émerveillé par vos yeux.",
+    sections: [
+      "Une résolution exceptionnelle",
+      "Dix millions de nuances",
+      "Le monde remis à l'endroit",
+      "Plus unique qu'une empreinte digitale",
+      "Un clin d'œil, au sens propre",
+      "Une guérison très rapide",
+      "L'angle mort que vous ne voyez jamais",
+      "Une mise au point instantanée",
+      "Des couleurs reconstituées sur les côtés",
+      "Ma réflexion"
+],
+    script: `
+      <p class="article-lead"><em>Une résolution comparable aux meilleures caméras, des millions de couleurs, une mise au point instantanée et un cerveau qui corrige l'image en permanence. Voici dix raisons d'être émerveillé par vos yeux.</em></p>
+
+      <h2>Une résolution exceptionnelle</h2>
+      <p>Si l'œil humain était un appareil photo numérique, sa résolution est souvent estimée à environ 576 mégapixels. C'est une estimation, mais elle donne une idée de la densité de cellules sensibles à la lumière qui tapissent notre rétine.</p>
+
+      <h2>Dix millions de nuances</h2>
+      <p>Nos yeux peuvent distinguer environ 10 millions de nuances de couleur. Pourtant, ils n'utilisent que trois types de cellules pour les couleurs, les cônes, sensibles au rouge, au vert et au bleu. C'est le cerveau qui combine ces trois signaux pour créer toute la palette que nous voyons.</p>
+
+      <h2>Le monde remis à l'endroit</h2>
+      <p>La lentille de notre œil, le cristallin, projette l'image à l'envers sur la rétine. C'est notre cerveau qui la retourne, en une fraction de seconde, pour que nous voyions le monde dans le bon sens.</p>
+
+      <h2>Plus unique qu'une empreinte digitale</h2>
+      <p>L'iris possède plus de 250 caractéristiques distinctives, contre environ 40 pour une empreinte digitale. C'est pourquoi la reconnaissance de l'iris compte parmi les systèmes d'identification les plus fiables.</p>
+
+      <h2>Un clin d'œil, au sens propre</h2>
+      <p>Un clignement dure à peine 100 à 150 millisecondes. Nous clignons environ 15 à 20 fois par minute, comme des essuie-glaces qui nettoient et hydratent la surface de l'œil.</p>
+
+      <h2>Une guérison très rapide</h2>
+      <p>La cornée, cette couche transparente à l'avant de l'œil, se régénère très vite. Une petite égratignure causée par une poussière peut guérir en 24 à 48 heures.</p>
+
+      <h2>L'angle mort que vous ne voyez jamais</h2>
+      <p>Chaque œil possède un petit point sans aucun capteur de lumière : l'endroit où le nerf optique quitte la rétine pour rejoindre le cerveau. Nous ne remarquons jamais ce trou, parce que nos deux yeux se complètent et que le cerveau comble l'information manquante.</p>
+
+      <h2>Une mise au point instantanée</h2>
+      <p>Le cristallin change de forme en quelques fractions de seconde pour ajuster la netteté. Vous pouvez lever les yeux de votre téléphone vers un paysage lointain, et l'image reste nette, sans effort.</p>
+
+      <h2>Des couleurs reconstituées sur les côtés</h2>
+      <p>Les cônes, responsables des couleurs, sont concentrés au centre de la rétine. Sur les bords, l'œil compte surtout des cellules sensibles à la lumière et au mouvement. Si nous avons l'impression de voir les couleurs du coin de l'œil, c'est en bonne partie parce que notre cerveau les complète.</p>
+
+      <h2>Ma réflexion</h2>
+      <p>La vue est l'un des sens qui nous apportent le plus de bonheur. Contempler le visage d'un proche, s'émerveiller devant un paysage : tout cela repose sur une mécanique d'une précision fascinante. Pour moi, l'œil porte la marque d'un génie créateur plein d'amour, qui l'a conçu pour que nous puissions goûter pleinement la beauté de la vie.</p>
+    `
+  },
+
+  // Le neutrino : comment la science découvre l'invisible
+  "UoxYZlJpPJ8": {
+    officialTitle: "Le neutrino : comment la science découvre l'invisible",
+    theme: "Physique",
+    readTime: "5 min de lecture",
+    summary: "Le prix Nobel de physique 2026 récompense la détection de neutrinos venus du fond de l'Univers. Une particule que personne n'a jamais vue, et dont l'histoire illustre une méthode de raisonnement puissante : l'inférence à la meilleure explication.",
+    sections: [
+      "Les 17 briques de l'Univers",
+      "Le fantôme de la famille",
+      "Les 10 cents qui manquaient",
+      "Le projet Poltergeist",
+      "IceCube et le Nobel 2026",
+      "L'inférence à la meilleure explication",
+      "Ma réflexion"
+],
+    script: `
+      <p class="article-lead"><em>Le prix Nobel de physique 2026 récompense la détection de neutrinos venus du fond de l'Univers. Une particule que personne n'a jamais vue, et dont l'histoire illustre une méthode de raisonnement puissante : l'inférence à la meilleure explication.</em></p>
+
+      <h2>Les 17 briques de l'Univers</h2>
+      <p>Selon la physique moderne, tout ce qui existe est construit à partir de 17 particules élémentaires.</p>
+      <p>Il y a d'abord 12 particules de matière. Six quarks, qui s'assemblent pour former les protons et les neutrons. Et six leptons : l'électron, ses deux grands frères instables, le muon et le tau, et trois neutrinos, chacun associé à l'un d'eux.</p>
+      <p>S'ajoutent 4 particules qui transmettent les forces : le photon pour la lumière et l'électromagnétisme, le gluon qui colle les quarks ensemble, et les bosons W et Z, responsables de certaines formes de radioactivité. Enfin, le boson de Higgs, découvert en 2012, donne leur masse aux autres particules.</p>
+
+      <h2>Le fantôme de la famille</h2>
+      <p>Parmi ces 17 briques, le neutrino est la plus insaisissable. Il n'a pas de charge électrique, presque pas de masse, et il traverse la matière sans interagir. En ce moment même, des milliers de milliards de neutrinos traversent votre corps, sans que vous ressentiez quoi que ce soit.</p>
+
+      <h2>Les 10 cents qui manquaient</h2>
+      <p>Imaginez une machine distributrice. Vous achetez un article à 50 cents avec une pièce d'un dollar. La machine devrait vous rendre 50 cents, mais elle vous rend toujours 40 cents. Où sont passés les 10 cents ?</p>
+      <p>Dans les années 1930, les physiciens vivaient exactement ce casse-tête. Dans certaines réactions nucléaires, une partie de l'énergie manquait toujours à l'appel. Cela contredisait une règle fondamentale : la conservation de l'énergie. L'énergie ne se crée pas et ne disparaît pas, elle se transforme.</p>
+      <p>En 1930, plutôt que de renoncer à cette loi, Wolfgang Pauli propose une idée audacieuse : une particule invisible s'échappe en emportant l'énergie manquante. Il venait de déduire le neutrino par la seule force du raisonnement.</p>
+
+      <h2>Le projet Poltergeist</h2>
+      <p>Restait à le détecter. Il a fallu attendre 26 ans. En 1956, Clyde Cowan et Frederick Reines installent d'immenses cuves de liquide près d'un puissant réacteur nucléaire. Leur espoir : qu'un neutrino, parmi des milliards, percute un atome dans la cuve.</p>
+      <p>C'est arrivé. La collision a produit un double éclair de lumière, la signature du neutrino. Le 14 juin 1956, ils envoient un télégramme à Pauli : sa déduction était confirmée.</p>
+
+      <h2>IceCube et le Nobel 2026</h2>
+      <p>Le prix Nobel de physique 2026 a été décerné à Francis Halzen, dont l'équipe a construit IceCube, un détecteur géant enfoui dans la glace du pôle Sud.</p>
+      <p>En 2017, IceCube capte un neutrino d'une énergie colossale. Comme le neutrino ne se laisse dévier ni par les champs magnétiques ni par la matière, il voyage en ligne droite. En percutant la glace, il a produit un muon, qui a laissé une longue trace lumineuse rectiligne dans le détecteur. Cette trace pointait comme un laser vers sa source : un blazar, une galaxie dont le trou noir central projette un jet de particules dirigé vers la Terre, à environ 4 milliards d'années-lumière.</p>
+
+      <h2>L'inférence à la meilleure explication</h2>
+      <p>En philosophie des sciences, cette démarche porte un nom : l'abduction, ou inférence à la meilleure explication. On observe un effet, et on en déduit la cause la plus plausible.</p>
+      <p>L'astronomie en est remplie. Neptune a été déduite des perturbations de l'orbite d'Uranus avant d'être vue au télescope. Les exoplanètes sont repérées grâce à la baisse de lumière de leur étoile quand elles passent devant, ou au léger tremblement qu'elles lui impriment. Et la matière noire est déduite de galaxies qui tournent trop vite pour rester entières sans une masse invisible.</p>
+
+      <h2>Ma réflexion</h2>
+      <p>En physique, cette méthode sert à faire des prédictions vérifiables. Appliquée à la question de notre existence, elle relève de la philosophie. Mais la logique est la même.</p>
+      <p>Quand j'observe la précision de l'Univers, ses lois finement équilibrées et la complexité du vivant, j'y vois un effet manifeste. Et la cause qui me semble la meilleure explication, c'est une intelligence, un Créateur. Et vous, quelle est votre meilleure explication ?</p>
+    `
+  },
+
+  // Kepler, Newton, Maxwell : trois géants de la science qui croyaient en un Créateur
+  "slei71ya6Pc": {
+    officialTitle: "Kepler, Newton, Maxwell : trois géants de la science qui croyaient en un Créateur",
+    theme: "Grands scientifiques",
+    readTime: "5 min de lecture",
+    summary: "On répète souvent que science et foi sont incompatibles. Pourtant, plusieurs des pères de la science moderne voyaient dans leurs découvertes une façon d'admirer le Créateur.",
+    sections: [
+      "Un fossé récent",
+      "Johannes Kepler (1571-1630)",
+      "Isaac Newton (1642-1727)",
+      "James Clerk Maxwell (1831-1879)",
+      "Ma réflexion"
+],
+    script: `
+      <p class="article-lead"><em>On répète souvent que science et foi sont incompatibles. Pourtant, plusieurs des pères de la science moderne voyaient dans leurs découvertes une façon d'admirer le Créateur.</em></p>
+
+      <h2>Un fossé récent</h2>
+      <p>C'est surtout à partir du XIXe siècle qu'un fossé s'est creusé entre la science et la croyance en un Créateur. Avant cela, de nombreux grands savants ne voyaient aucune contradiction entre étudier la nature et admirer Celui qui l'a conçue. En voici trois.</p>
+
+      <h2>Johannes Kepler (1571-1630)</h2>
+      <p>Kepler naît en 1571 à Weil der Stadt, en Allemagne. Enfant fragile, sa vue est affaiblie par la variole. Son père quitte la famille, et c'est sa mère qui l'éveille au ciel : à 6 ans, elle l'emmène observer la grande comète de 1577. Brillant élève, il entre à l'université de Tübingen pour devenir théologien, avant de se tourner vers les mathématiques.</p>
+      <p>Il démontre que les planètes suivent des orbites en forme d'ellipse, et non de cercles parfaits. Il découvre qu'elles accélèrent en s'approchant du Soleil et ralentissent en s'en éloignant, et il relie précisément leur distance au temps qu'elles mettent à faire le tour. Il explique aussi comment l'image se forme dans l'œil, conçoit un type de télescope astronomique et propose que la Lune attire les océans pour créer les marées.</p>
+      <p>Pour Kepler, faire de la science, c'était lire la pensée du Créateur. On lui attribue cette formule : « Je ne fais que penser les pensées de Dieu après Lui. »</p>
+
+      <h2>Isaac Newton (1642-1727)</h2>
+      <p>Newton naît en 1642 en Angleterre, prématuré, quelques mois après la mort de son père. Élevé surtout par sa grand-mère, il est un enfant solitaire qui fabrique des cadrans solaires, des moulins miniatures et des cerfs-volants munis de lanternes.</p>
+      <p>Il montre que la force qui fait tomber les objets sur Terre est la même qui retient la Lune en orbite : la gravitation universelle. Il formule les trois lois du mouvement, base de la mécanique classique. Pour résoudre ses problèmes, il invente une nouvelle branche des mathématiques, le calcul infinitésimal. Avec un prisme, il prouve que la lumière blanche contient toutes les couleurs. Et il invente le télescope à miroir, principe encore utilisé aujourd'hui.</p>
+      <p>Newton a écrit davantage sur la théologie que sur la physique. Dans ses Principia, il affirme que ce système si élégant du Soleil, des planètes et des comètes ne pouvait venir que du dessein d'un Être intelligent et puissant.</p>
+
+      <h2>James Clerk Maxwell (1831-1879)</h2>
+      <p>Maxwell naît en 1831 à Édimbourg et grandit à la campagne, en Écosse. Il perd sa mère à 8 ans. À l'école, on se moque de son accent rural, mais son talent éclate vite : à 14 ans, il présente un travail de géométrie devant la Royal Society d'Édimbourg.</p>
+      <p>Il montre que l'électricité et le magnétisme sont deux aspects d'une même force, l'électromagnétisme, et que la lumière en fait partie. En 1861, il réalise la première photographie couleur permanente à l'aide de trois filtres, rouge, vert et bleu. Il explique la température et la pression des gaz par le mouvement de milliards de particules. Et il prouve que les anneaux de Saturne sont formés d'innombrables petits fragments, ce que les sondes spatiales ont confirmé plus d'un siècle plus tard.</p>
+      <p>Chrétien convaincu, Maxwell était frappé par le fait que tous les atomes d'un même élément sont parfaitement identiques. Pour lui, ils avaient les caractéristiques d'« articles manufacturés ».</p>
+
+      <h2>Ma réflexion</h2>
+      <p>L'idée que les grands scientifiques ont toujours rejeté la foi ne correspond pas à l'histoire. Pour Kepler, Newton et Maxwell, chaque découverte révélait l'intelligence du Créateur. C'est exactement dans cet esprit que j'explore la science.</p>
+    `
+  },
+
+  // L'ADN, le Nobel 2026 et l'optogénétique : le code caché
+  "2Qn-coJEddU": {
+    officialTitle: "L'ADN, le Nobel 2026 et l'optogénétique : le code caché",
+    theme: "ADN et vivant",
+    readTime: "5 min de lecture",
+    summary: "Une petite algue sans cerveau sait trouver la lumière. Son secret, écrit dans son ADN, a valu le prix Nobel de médecine 2026 à trois chercheurs. Et il nous ramène à une question : d'où vient l'information inscrite dans le vivant ?",
+    sections: [
+      "Une algue qui trouve la lumière",
+      "Une bibliothèque dans chaque cellule",
+      "Des plans et un programme",
+      "Une copie presque parfaite",
+      "L'ADN, un code",
+      "Le Nobel de médecine 2026",
+      "Ma réflexion"
+],
+    script: `
+      <p class="article-lead"><em>Une petite algue sans cerveau sait trouver la lumière. Son secret, écrit dans son ADN, a valu le prix Nobel de médecine 2026 à trois chercheurs. Et il nous ramène à une question : d'où vient l'information inscrite dans le vivant ?</em></p>
+
+      <h2>Une algue qui trouve la lumière</h2>
+      <p>Imaginez une minuscule algue verte dans une mare. Pas de cerveau, pas d'yeux, pas de système nerveux. Pourtant, elle nage vers la lumière avec une précision étonnante. Pour comprendre comment, et comment elle a mené à un prix Nobel, il faut ouvrir le livre écrit dans chacune de nos cellules.</p>
+
+      <h2>Une bibliothèque dans chaque cellule</h2>
+      <p>Chaque cellule vivante contient une molécule appelée ADN. On la décrit souvent comme une longue échelle torsadée. Le plus fascinant, pourtant, c'est ce qui est écrit dessus. L'ADN porte un message, rédigé avec un alphabet de quatre lettres : A, T, G et C.</p>
+      <p>Le génome humain compte environ trois milliards de ces lettres. Imprimé, il remplirait près de mille gros volumes. C'est une bibliothèque entière, logée dans une cellule invisible à l'œil nu.</p>
+      <p>Et elle est rangée avec soin. Les chromosomes sont les grandes sections. Les gènes sont les ouvrages, chacun contenant une recette : comment fabriquer telle protéine, avec ses éléments dans un ordre précis.</p>
+
+      <h2>Des plans et un programme</h2>
+      <p>Pensez à la bibliothèque d'une grande école d'ingénieurs : des plans pour bâtir des immeubles, des machines, des avions, et des manuels de programmation pour les faire fonctionner.</p>
+      <p>L'ADN contient l'équivalent. Les plans pour fabriquer les protéines, ces petites machines qui font tourner la vie. Les plans d'assemblage, pour former des cellules, des tissus et des organes. Et une programmation : certains gènes s'activent dans le cœur, d'autres dans l'œil, d'autres seulement à un moment précis de la croissance.</p>
+
+      <h2>Une copie presque parfaite</h2>
+      <p>Cette bibliothèque se transmet. Un enfant reçoit la moitié de celle de son père et la moitié de celle de sa mère. Voilà pourquoi un fils peut avoir les yeux de son père ou le sourire de sa mère.</p>
+      <p>Avant chaque division, la cellule recopie ses trois milliards de lettres. Elle le fait avec une fidélité stupéfiante, grâce à des mécanismes qui relisent la copie et corrigent les erreurs, comme un correcteur attentif.</p>
+
+      <h2>L'ADN, un code</h2>
+      <p>Un logiciel fonctionne grâce à l'ordre précis de ses symboles. Changez cet ordre, et le programme plante. L'ADN fonctionne de la même façon : c'est un code, avec ses règles et ses instructions, qui doivent être dans le bon ordre pour que la vie fonctionne.</p>
+      <p>Or, partout où nous rencontrons une information complexe et précise, un livre, un logiciel, un message, nous savons qu'elle vient d'une intelligence. D'où vient, alors, celle qui est inscrite dans chaque cellule ?</p>
+
+      <h2>Le Nobel de médecine 2026</h2>
+      <p>Revenons à notre algue. Le prix Nobel de médecine 2026 a été décerné à Karl Deisseroth, Peter Hegemann et Georg Nagel. Dans l'ADN de l'algue, ils ont trouvé les instructions d'une protéine étonnante : quand la lumière la touche, elle ouvre un minuscule canal et laisse passer un courant. C'est ce qui guide l'algue vers le soleil.</p>
+      <p>Leur idée géniale : insérer cette instruction dans des neurones, les cellules du cerveau. On obtient des neurones qu'on peut allumer et éteindre avec un simple faisceau de lumière. Cette technique s'appelle l'optogénétique.</p>
+      <p>Elle a ouvert une ère nouvelle pour l'étude de la mémoire, de la peur et du mouvement, et pour la recherche sur la dépression, l'épilepsie ou la cécité. Tout cela parce qu'une instruction de l'ADN d'une algue était assez précise pour fonctionner dans un autre organisme.</p>
+
+      <h2>Ma réflexion</h2>
+      <p>Cette protéine, codée lettre par lettre dans l'ADN d'une humble algue, fonctionne avec la précision d'un logiciel écrit par un ingénieur. Tout cela renforce ma conviction qu'une immense intelligence a conçu ce système, et que le dessein intelligent a vraiment du sens.</p>
+    `
+  },
+
+  // EN RÉSERVE : L'or : forgé dans une collision d'étoiles, façonné pour nos mains
+  "en-reserve-or-collision-etoiles": {
+    isReserved: true,
+    publishedOnYouTube: false,
+    officialTitle: "L'or : forgé dans une collision d'étoiles, façonné pour nos mains",
+    theme: "Physique",
+    readTime: "6 min de lecture",
+    summary: "L'or de vos bijoux est né en une seconde, il y a plus de quatre milliards et demi d'années, dans une collision d'étoiles mortes. Voici son histoire, de l'espace jusqu'à nos mains.",
+    sections: [
+      "Une phrase qui m'est restée",
+      "Ce que les étoiles savent fabriquer",
+      "La forge cosmique",
+      "La preuve de 2017",
+      "La couleur de l'or et Einstein",
+      "Un métal fait pour être travaillé",
+      "L'humanité et l'or",
+      "Ma réflexion"
+],
+    script: `
+      <p class="article-lead"><em>L'or de vos bijoux est né en une seconde, il y a plus de quatre milliards et demi d'années, dans une collision d'étoiles mortes. Voici son histoire, de l'espace jusqu'à nos mains.</em></p>
+
+      <h2>Une phrase qui m'est restée</h2>
+      <p>L'astrophysicienne française Kumiko Kotera expliquait récemment, dans l'émission Planétorium du Figaro, que l'or de nos bijoux vient de la fusion d'étoiles à neutrons, et qu'elle trouvait cela très émouvant. Regardez une alliance ou une chaîne héritée d'une grand-mère : cet or vient du ciel.</p>
+
+      <h2>Ce que les étoiles savent fabriquer</h2>
+      <p>Tout est fait d'atomes. Au centre de chaque atome, un noyau contient des protons et des neutrons. C'est le nombre de protons qui fixe l'identité de l'élément : un pour l'hydrogène, six pour le carbone, soixante-dix-neuf pour l'or.</p>
+      <p>Les étoiles fabriquent des éléments en soudant des noyaux ensemble. Notre Soleil transforme l'hydrogène en hélium. Les étoiles plus massives vont jusqu'au carbone, à l'oxygène, puis au fer. Là, tout s'arrête : fusionner du fer coûte de l'énergie au lieu d'en produire. Aucune étoile ne fabrique d'or au cours de sa vie.</p>
+
+      <h2>La forge cosmique</h2>
+      <p>Pour aller au-delà du fer, la nature bombarde les noyaux de neutrons. Sans charge électrique, le neutron entre facilement. Quand un noyau en a trop, l'un d'eux se transforme en proton, et l'atome monte d'une case dans le tableau périodique. Pour atteindre l'or, il faut que des dizaines de neutrons soient avalés en une fraction de seconde.</p>
+      <p>Un endroit offre ces conditions : la collision de deux étoiles à neutrons. Une étoile à neutrons est le cadavre d'une étoile géante, plus lourd que le Soleil mais tassé dans une boule d'une vingtaine de kilomètres. Une cuillère à café de sa matière pèserait des milliards de tonnes. Quand deux de ces astres se percutent, de la matière est projetée dans l'espace, et l'or, le platine et l'uranium apparaissent en une seconde environ. Le nuage brille ensuite pendant des jours : c'est une kilonova.</p>
+
+      <h2>La preuve de 2017</h2>
+      <p>Le 17 août 2017, des détecteurs captent les ondes gravitationnelles d'une telle collision, à 130 millions d'années-lumière. Des dizaines de télescopes observent ensuite la lueur rougeâtre prévue par les calculs. Cette seule collision aurait produit plusieurs fois la masse de la Terre en or.</p>
+      <p>L'or de nos bijoux vient d'autres collisions, survenues avant la naissance du Soleil. Il s'est mêlé au nuage de gaz qui a formé notre système solaire. Quand la jeune Terre était en fusion, presque tout son or a coulé vers le noyau. Selon une hypothèse répandue, celui que nous extrayons aujourd'hui aurait été apporté plus tard par des météorites.</p>
+
+      <h2>La couleur de l'or et Einstein</h2>
+      <p>Presque tous les métaux sont gris ou argentés. L'or est l'un des seuls à avoir une couleur chaude, et l'explication vient d'Albert Einstein.</p>
+      <p>En 1905, Einstein publie sa théorie de la relativité restreinte. Rien ne peut dépasser la vitesse de la lumière, et plus un objet s'en approche, plus il se comporte comme s'il devenait lourd.</p>
+      <p>Dans l'atome d'or, les 79 protons du noyau exercent une attraction énorme. Les électrons les plus proches tournent à environ 58 % de la vitesse de la lumière, et se comportent comme s'ils étaient environ 20 % plus lourds. Ils se resserrent autour du noyau, ce qui modifie la disposition des électrons extérieurs, ceux qui interagissent avec la lumière.</p>
+      <p>Résultat : l'or absorbe la lumière bleue et nous renvoie le jaune et le rouge. L'argent, son voisin, n'absorbe que de l'ultraviolet invisible, et paraît donc blanc argenté. Sans la relativité, l'or serait argenté lui aussi.</p>
+
+      <h2>Un métal fait pour être travaillé</h2>
+      <p>L'or ne rouille pas. Un bijou retrouvé dans une tombe après 6 000 ans brille encore. Il est aussi d'une souplesse incomparable : avec un seul gramme, on peut faire une feuille d'un mètre carré, si mince que la lumière la traverse. On peut le marteler, l'étirer en fil et le graver sans outils complexes. Et on le trouve pur, en pépites, dans les rivières.</p>
+
+      <h2>L'humanité et l'or</h2>
+      <p>À Varna, en Bulgarie, vers 4500 avant notre ère, un homme est enterré couvert d'or : ce sont les plus anciens objets en or travaillé connus. Le masque de Toutânkhamon en contient plus de 10 kilos. En Lydie, le roi Crésus frappe les premières pièces en or pur, et Rome fera circuler son aureus dans tout l'empire.</p>
+      <p>Au XIVe siècle, Mansa Moussa, roi du Mali, traverse l'Afrique vers La Mecque avec tant d'or que son prix s'effondre au Caire pendant des années. Pour les Incas, l'or était « la sueur du soleil ». Puis viennent les grandes ruées : la Californie, l'Australie, l'Afrique du Sud, le Klondike.</p>
+      <p>Jusqu'en 1971, le dollar américain était adossé à l'or. Aujourd'hui, on en trouve dans nos téléphones et sur les miroirs du télescope James Webb. Tout l'or extrait dans l'histoire tiendrait dans un cube d'environ 22 mètres de côté.</p>
+
+      <h2>Ma réflexion</h2>
+      <p>Pour que l'or existe, il a fallu des lois capables de forger des atomes dans des collisions d'étoiles. Pour qu'il ait sa couleur, il a fallu la relativité. Pour qu'il nous parvienne, il a fallu qu'il traverse la galaxie jusqu'à une planète habitée. Et au bout de cette chaîne, il y a nous, capables de le trouver beau et d'en faire le symbole de ce qui dure.</p>
+      <p>Quand autant de conditions convergent vers un résultat qui a du sens, faut-il y voir le hasard ou une intention ? Pour moi, l'histoire de l'or renforce ma conviction qu'une immense intelligence a conçu tout cela.</p>
+    `
+  },
+
+  // EN RÉSERVE : Le Soleil et l'effet tunnel : le thermostat cosmique
+  "en-reserve-soleil-effet-tunnel": {
+    isReserved: true,
+    publishedOnYouTube: false,
+    officialTitle: "Le Soleil et l'effet tunnel : le thermostat cosmique",
+    theme: "Physique",
+    readTime: "5 min de lecture",
+    summary: "D'après la physique classique, notre Soleil ne devrait pas briller. S'il éclaire la Terre depuis plus de quatre milliards d'années, c'est grâce à un phénomène quantique étonnant : l'effet tunnel.",
+    sections: [
+      "Un mystère au cœur du Soleil",
+      "Le mur entre les protons",
+      "Une particule qui se comporte comme une vague",
+      "L'effet tunnel",
+      "Un thermostat parfait",
+      "Ma réflexion"
+],
+    script: `
+      <p class="article-lead"><em>D'après la physique classique, notre Soleil ne devrait pas briller. S'il éclaire la Terre depuis plus de quatre milliards d'années, c'est grâce à un phénomène quantique étonnant : l'effet tunnel.</em></p>
+
+      <h2>Un mystère au cœur du Soleil</h2>
+      <p>Notre Soleil brûle depuis plus de quatre milliards et demi d'années. Il réchauffe notre monde et nourrit la vie. Pourtant, selon la physique classique, il ne devrait pas pouvoir s'allumer.</p>
+      <p>Au cœur du Soleil, la température atteint environ 15 millions de degrés. C'est un enfer, mais en théorie, ce n'est pas assez chaud pour faire fusionner les noyaux d'hydrogène, les protons.</p>
+
+      <h2>Le mur entre les protons</h2>
+      <p>Les protons portent tous une charge électrique positive. Or, dans notre Univers, les charges identiques se repoussent. Plus deux protons s'approchent, plus cette répulsion devient forte, comme un mur invisible qui se dresse entre eux. Pour fusionner, ils devraient le franchir, et ils n'ont pas assez d'énergie pour y arriver.</p>
+
+      <h2>Une particule qui se comporte comme une vague</h2>
+      <p>La physique quantique change la donne. À très petite échelle, un proton ne se comporte pas comme une bille solide. Il se comporte plutôt comme une vague de possibilités, étalée dans l'espace. Cette vague indique les endroits où il a le plus de chances de se trouver.</p>
+      <p>Les physiciens décrivent cette vague avec une équation célèbre, celle d'Erwin Schrödinger. Elle permet de calculer comment la vague se déplace et se transforme, selon la masse de la particule et les obstacles qu'elle rencontre.</p>
+
+      <h2>L'effet tunnel</h2>
+      <p>Quand la vague d'un proton frappe le mur de répulsion, elle ne s'arrête pas complètement. Une infime partie déborde de l'autre côté. Et puisque le proton peut se trouver partout où sa vague existe, il a une petite chance d'apparaître de l'autre côté du mur, sans l'avoir escaladé. C'est l'effet tunnel.</p>
+      <p>Deux protons peuvent alors se rejoindre et fusionner. Lors de cette fusion, une infime partie de leur masse se transforme en énergie. Répété un nombre immense de fois, ce processus produit la chaleur et la lumière du Soleil.</p>
+
+      <h2>Un thermostat parfait</h2>
+      <p>Pourquoi le Soleil ne consume-t-il pas tout son carburant d'un seul coup ? Parce que ces fusions sont extrêmement rares. Le passage par effet tunnel est peu probable, et la première étape de la fusion exige en plus qu'un proton se transforme en neutron, un événement encore plus rare.</p>
+      <p>Ce rythme lent agit comme un thermostat. Il permet au Soleil de distribuer sa chaleur avec régularité pendant des milliards d'années, assez longtemps pour que la vie apparaisse et se développe sur Terre.</p>
+
+      <h2>Ma réflexion</h2>
+      <p>Une fois de plus, l'infiniment petit gouverne l'infiniment grand. Une règle quantique, réglée avec justesse, fait briller notre étoile au bon rythme pour que nous puissions exister. J'y vois la signature d'un génie créateur.</p>
+    `
+  },
+
 };
