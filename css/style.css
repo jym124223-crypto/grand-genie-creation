@@ -198,6 +198,7 @@ img {
   color: var(--gold-primary);
   box-shadow: 0 0 15px var(--gold-glow);
   transition: transform var(--transition-fast);
+  overflow: hidden;
 }
 
 .brand-logo:hover .brand-icon {

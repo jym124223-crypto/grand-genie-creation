@@ -2,7 +2,7 @@
  * Base de données générée automatiquement lors du build
  * Chaîne : « Le Grand Génie de la Création »
  * Total vidéos : 7
- * Date de génération : 2026-10-20T02:52:16.347Z
+ * Date de génération : 2026-10-20T03:41:16.039Z
  */
 
 const THEMES = {
