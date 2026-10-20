@@ -71,12 +71,48 @@ Si le flux YouTube ne répond pas pendant le build (coupure réseau, maintenance
 
 ---
 
-## 🚀 4. Déploiement
+## 🖼️ 4. Comment ajouter une nouvelle Affiche à télécharger
 
-Dès que vous avez modifié `data/manual_videos.js` ou souhaitez actualiser le site :
+Le site dispose d'une section publique **Affiches** (`affiches.html`) et d'une page privée de téléchargement direct (`affiches-telechargement.html`) conçue pour vos abonnés MailerLite.
+
+Pour ajouter une nouvelle affiche en 2 étapes très simples :
+
+### Étape A — Déposer vos fichiers dans `public/affiches/`
+Placez vos deux fichiers dans le dossier `public/affiches/` :
+- L'image d'aperçu : `public/affiches/nom-affiche-preview.jpg` (ou `.webp`)
+- Le fichier PDF haute définition : `public/affiches/nom-affiche-hd.pdf`
+
+### Étape B — Déclarer l'affiche dans `data/affiches.js`
+Ouvrez le fichier `data/affiches.js` et ajoutez un nouvel objet dans la liste `AFFICHES` :
+
+```javascript
+{
+  id: "affiche-adn-programme",
+  title: "L'ADN : Le Programme Numérique du Vivant",
+  theme: "ADN et vivant", // 'Cosmologie', 'ADN et vivant', 'Physique', 'Grands scientifiques', ou 'Synthèse globale'
+  themeKey: "adn-vivant",
+  description: "Infographie haute définition synthétisant la densité d'information de l'ADN et les nanomachines cellulaires.",
+  previewImage: "/public/affiches/nom-affiche-preview.jpg",
+  pdfFile: "/public/affiches/nom-affiche-hd.pdf",
+  format: "Format A3 / A4 — Haute Définition (300 DPI)"
+}
+```
+L'affiche apparaîtra immédiatement sur la page publique `affiches.html` et sur la page de téléchargement direct `affiches-telechargement.html`.
+
+### 💡 Lien pour votre courriel de bienvenue MailerLite :
+Dans le courriel automatisé envoyé à vos nouveaux inscrits sur MailerLite, mettez simplement le lien vers la page de téléchargement :
+`https://legrandgeniedelacreation.com/affiches-telechargement.html`
+Cette page est protégée (`noindex`), invisible des moteurs de recherche et réservée à vos abonnés.
+
+---
+
+## 🚀 5. Déploiement
+
+Dès que vous avez modifié `data/manual_videos.js` ou `data/affiches.js` :
 ```bash
 git add .
-git commit -m "feat: mise a jour des videos et scripts"
+git commit -m "feat: mise a jour des videos, scripts ou affiches"
 git push origin main
 ```
 Vercel lancera automatiquement la commande de build et mettra votre site en ligne en quelques secondes !
+

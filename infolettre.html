@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L'Infolettre de Jean-Yves | Le Grand Génie de la Création</title>
-  <meta name="description" content="Abonnez-vous gratuitement à l'infolettre « Le Grand Génie de la Création » pour recevoir chaque semaine des analyses scientifiques exclusives et les coulisses des vidéos.">
+  <title>L'Infolettre & Affiches Offertes | Le Grand Génie de la Création</title>
+  <meta name="description" content="Abonnez-vous gratuitement à l'infolettre pour recevoir immédiatement les affiches haute définition gratuites et toutes les nouveautés de la chaîne.">
   <link rel="canonical" href="https://legrandgeniedelacreation.com/infolettre.html">
 
   <link rel="stylesheet" href="/css/style.css">
@@ -34,6 +34,7 @@
           <li><a href="index.html" class="nav-link">Accueil</a></li>
           <li><a href="videos.html" class="nav-link">Vidéos</a></li>
           <li><a href="themes.html" class="nav-link">Thèmes</a></li>
+          <li><a href="affiches.html" class="nav-link">Affiches</a></li>
           <li><a href="a-propos.html" class="nav-link">À propos</a></li>
         </ul>
         <a href="infolettre.html" class="nav-cta-btn active" style="box-shadow: 0 0 15px var(--gold-primary);">
@@ -56,73 +57,57 @@
   </header>
 
   <main style="padding-block: 4rem 6rem;">
-    <div class="container" style="max-width: 860px;">
+    <div class="container" style="max-width: 820px;">
       
-      <div class="newsletter-card" style="padding: clamp(2rem, 5vw, 4rem);">
+      <div class="newsletter-card" style="padding: clamp(2rem, 5vw, 3.5rem);">
         <div class="newsletter-inner">
           <div class="newsletter-badge">
-            <span class="badge badge-gold">Adhésion 100% Gratuite</span>
+            <span class="badge badge-gold">Affiches Gratuites &amp; Nouveautés</span>
           </div>
 
-          <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.4rem); line-height: 1.15; margin-bottom: 1.25rem;">
-            L'Infolettre du <br>
-            <span style="background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Grand Génie de la Création</span>
+          <h1 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 1rem;">
+            Recevez les affiches exclusives et les nouveautés de la chaîne
           </h1>
 
-          <p class="newsletter-text" style="font-size: 1.15rem; color: #cbd5e1;">
-            Rejoignez des milliers de passionnés de science et de chercheurs de vérité. Chaque samedi matin, recevez une lettre soignée directement rédigée par Jean-Yves.
+          <p class="newsletter-text" style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 2rem;">
+            En vous inscrivant à l'infolettre, vous recevrez par courriel le lien pour télécharger nos <strong>affiches infographiques haute définition</strong>, ainsi que les nouvelles vidéos et enquêtes scientifiques en avant-première.
           </p>
 
-          <form class="newsletter-form" id="page-newsletter-form" style="margin-bottom: 1rem;">
-            <input 
-              type="email" 
-              class="newsletter-input" 
-              placeholder="Votre meilleure adresse courriel" 
-              required 
-              aria-label="Adresse courriel"
-              id="page-newsletter-email"
-            >
-            <button type="submit" class="btn btn-gold" id="page-newsletter-submit">
-              Rejoindre gratuitement
-            </button>
-          </form>
+          <!-- =====================================================================
+               FORMULAIRE D'INTÉGRATION MAILERLITE
+               Stylé selon la charte du site : fond bleu nuit, champ soigné, bouton or.
+               ===================================================================== -->
+          <div class="mailerlite-integration-wrapper" id="mailerlite-wrapper">
+            <!-- [COLLER ICI LE CODE MAILERLITE] -->
+            <!-- Si vous utilisez le script universel MailerLite, collez le conteneur ci-dessous :
+                 <div class="ml-embedded" data-form="VOTRE_FORM_ID"></div>
+                 Ou utilisez ce formulaire HTML connecté à votre compte MailerLite : -->
+            <form class="newsletter-form" id="ml-newsletter-form" action="https://assets.mailerlite.com/jsonp/YOUR_ACCOUNT_ID/forms/YOUR_FORM_ID/subscribe" method="post" target="_blank">
+              <input 
+                type="email" 
+                name="fields[email]" 
+                class="newsletter-input" 
+                placeholder="Votre adresse courriel" 
+                required 
+                autocomplete="email" 
+                aria-label="Adresse courriel"
+                id="ml-email-input"
+              >
+              <button type="submit" class="btn btn-gold" id="ml-submit-button">
+                <span>Recevoir les affiches</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </form>
+          </div>
 
-          <span class="newsletter-privacy">
-            🔒 Vos coordonnées restent strictement confidentielles. Zéro publicité intrusive, désabonnement instantané en un clic.
+          <span class="newsletter-privacy" style="margin-top: 1.25rem;">
+            🔒 100% gratuit. Aucun spam, désabonnement possible à tout instant en un seul clic.
           </span>
         </div>
       </div>
-
-      <!-- Ce que vous allez recevoir -->
-      <section style="margin-top: 4.5rem;">
-        <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 2.5rem;">Ce que vous recevrez dans votre boîte :</h2>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.75rem;">
-          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem;">
-            <div style="color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 0.75rem;">✦ 01</div>
-            <h3 style="font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem;">Analyses scientifiques inédites</h3>
-            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
-              Des compléments d'études et des synthèses de publications universitaires récentes trop denses pour tenir dans une vidéo de 15 minutes.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem;">
-            <div style="color: var(--cyan-electric); font-size: 1.5rem; margin-bottom: 0.75rem;">✦ 02</div>
-            <h3 style="font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem;">Avant-premières des vidéos</h3>
-            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
-              Découvrez les sujets en cours de tournage, participez aux sondages pour choisir les thèmes futurs et recevez les liens 24 heures avant YouTube.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem;">
-            <div style="color: var(--gold-light); font-size: 1.5rem; margin-bottom: 0.75rem;">✦ 03</div>
-            <h3 style="font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem;">Les carnets de lecture de Jean-Yves</h3>
-            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
-              Citations marquantes, livres recommandés sur l'ajustement fin de l'univers, l'origine de l'ADN et l'histoire des grands scientifiques.
-            </p>
-          </div>
-        </div>
-      </section>
 
     </div>
   </main>
@@ -157,6 +142,7 @@
             <li><a href="index.html" class="footer-link">Accueil</a></li>
             <li><a href="videos.html" class="footer-link">Vidéos</a></li>
             <li><a href="themes.html" class="footer-link">Thèmes</a></li>
+            <li><a href="affiches.html" class="footer-link">Affiches</a></li>
             <li><a href="a-propos.html" class="footer-link">À propos</a></li>
             <li><a href="infolettre.html" class="footer-link">Infolettre</a></li>
           </ul>
@@ -165,7 +151,7 @@
         <div>
           <h4 class="footer-col-title">Réseaux de la chaîne</h4>
           <div class="footer-social-list">
-            <a href="https://youtube.com/@legrandgeniedelacreation" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <a href="https://www.youtube.com/@immensegeniedanslunivers?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="social-btn">
               <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               <span>YouTube</span>
             </a>

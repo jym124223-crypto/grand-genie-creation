@@ -550,6 +550,12 @@ if (typeof module !== 'undefined' && module.exports) {
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://legrandgeniedelacreation.com/affiches.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://legrandgeniedelacreation.com/a-propos.html</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
