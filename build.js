@@ -571,7 +571,7 @@ ${videoUrls}
     console.log('✅ sitemap.xml mis à jour.');
   }
 
-  console.log('✨ Build de production terminé avec succès : exactement 7 vidéos.');
+  console.log(`✨ Build de production terminé avec succès : exactement ${processedVideos.length} vidéos.`);
 }
 
 runBuild().catch(err => {

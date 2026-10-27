@@ -7,6 +7,108 @@
  */
 
 module.exports = {
+  // Qu'y avait-il avant le Big Bang ?
+  "hPijA7bN2xg": {
+    officialTitle: "Qu'y avait-il avant le Big Bang ?",
+    theme: "Cosmologie",
+    readTime: "7 min de lecture",
+    summary: "L'univers a commencé il y a 13,8 milliards d'années. Mais qu'y avait-il avant ? Et surtout, qu'est-ce qui l'a fait exister ? Du théorème de Borde-Guth-Vilenkin à l'argument du Kalam et la question de Leibniz : une enquête rigoureuse sur la Cause première.",
+    sections: [
+      "Un univers qui a commencé",
+      "L'argument cosmologique du Kalam",
+      "Rien ne vient de rien",
+      "Le passé peut-il être infini ?",
+      "Ce que démontre la science moderne",
+      "Quelle est la nature de la Cause première ?",
+      "Un univers beau et intelligible",
+      "Ma réflexion"
+    ],
+    script: `
+      <p class="article-lead"><em>L'univers a commencé il y a 13,8 milliards d'années. Mais qu'y avait-il avant ? Et surtout, qu'est-ce qui l'a fait exister ? Une enquête scientifique et philosophique sur la cause de tout ce qui existe.</em></p>
+
+      <h2>Un univers qui a commencé</h2>
+      <p>Pendant des siècles, beaucoup de penseurs et d'astronomes supposaient que l'Univers était éternel, statique et immuable. Mais au XXe siècle, une succession de découvertes majeures a bouleversé cette vision : les équations de la relativité générale d'Albert Einstein, les travaux pionniers de Georges Lemaître, l'observation de l'expansion des galaxies par Edwin Hubble en 1929, et la détection du rayonnement fossile par Arno Penzias et Robert Wilson en 1965.</p>
+      <p>La conclusion s'est imposée à la communauté scientifique : l'espace, le temps et la matière ont eu un véritable commencement absolu il y a environ 13,8 milliards d'années.</p>
+
+      <h2>L'argument cosmologique du Kalam</h2>
+      <p>Si l'univers a eu un commencement, une question inévitable surgit : qu'est-ce qui l'a fait exister ? Cet enchaînement logique est au cœur de l'argument cosmologique du Kalam, réactualisé par le philosophe William Lane Craig :</p>
+      <ol style="margin-left: 1.5rem; margin-block: 1rem; color: #cbd5e1; line-height: 1.8;">
+        <li>Tout ce qui commence à exister a une cause.</li>
+        <li>L'univers a commencé à exister.</li>
+        <li>Par conséquent, l'univers a une cause.</li>
+      </ol>
+
+      <h2>Rien ne vient de rien</h2>
+      <p>Le premier principe est l'un des piliers les plus solides de la raison humaine et de la méthode scientifique : <em>ex nihilo nihil fit</em> (de rien, rien ne vient). Prétendre que l'Univers tout entier a jailli du néant absolu, sans aucune cause ni raison, contredirait tout ce que nous observons chaque jour.</p>
+      <p>Comme le demandait le philosophe et mathématicien Gottfried Wilhelm Leibniz : <em>« Pourquoi y a-t-il quelque chose plutôt que rien ? »</em> Le néant n'a pas de propriétés, pas de lois, pas de potentiel. Il ne peut rien produire.</p>
+
+      <h2>Le passé peut-il être infini ?</h2>
+      <p>Certains ont suggéré que l'univers n'avait pas de début et qu'une chaîne infinie d'événements s'étendait dans le passé. Mais les mathématiciens et philosophes ont démontré qu'un infini actuel dans le temps réel engendre d'insolubles paradoxes logiques. On ne peut pas traverser un nombre infini de jours pour atteindre le jour d'aujourd'hui. Si le passé était infini, le présent n'aurait jamais pu advenir.</p>
+
+      <h2>Ce que démontre la science moderne</h2>
+      <p>En 2003, les cosmologistes Arvind Borde, Alan Guth et Alexander Vilenkin ont établi un théorème fondamental (le théorème BGV). Ce théorème mathématique démontre que <strong>tout univers en expansion moyenne dans son ensemble doit obligatoirement avoir une frontière temporelle dans le passé</strong>. Même dans les scénarios de multivers ou d'inflation éternelle, le début absolu de l'espace-temps demeure inévitable.</p>
+
+      <h2>Quelle est la nature de la Cause première ?</h2>
+      <p>Puisque la cause de l'Univers a créé l'espace, le temps et toute la matière, cette cause doit nécessairement être :</p>
+      <ul style="margin-left: 1.5rem; margin-block: 1rem; color: #cbd5e1; line-height: 1.8;">
+        <li><strong>Au-delà de l'espace</strong> (immatérielle et omniprésente).</li>
+        <li><strong>Au-delà du temps</strong> (intemporelle et sans commencement).</li>
+        <li><strong>D'une puissance inouïe</strong> (capable de faire exister des milliards de galaxies).</li>
+        <li><strong>Dotée de volonté</strong> : pour qu'une cause intemporelle produise un effet temporel qui commence dans le temps, elle a dû choisir de créer.</li>
+      </ul>
+
+      <h2>Un univers beau et intelligible</h2>
+      <p>Ce début n'a pas été une explosion chaotique quelconque. L'Univers est régi par des lois mathématiques d'une élégance et d'une symétrie sublimes. Comme le soulignaient Paul Dirac, Albert Einstein et Henri Poincaré, la beauté des lois de la nature est si profonde qu'elle oriente les plus grands physiciens dans leurs découvertes.</p>
+
+      <h2>Ma réflexion</h2>
+      <p>Quand la science moderne nous montre que l'Univers a surgi avec un ordre mathématique impeccable, réglé au millimètre près pour permettre la vie et la pensée, je ne peux pas croire à un simple accident du néant. Tout concorde pour désigner une Cause première transcendante, intelligente et majestueuse : le Grand Génie de la Création.</p>
+    `
+  },
+
+  // ADN POUBELLE (Junk DNA): La preuve du créateur!
+  "duBb1KJPsio": {
+    officialTitle: "ADN Poubelle (Junk DNA) : La preuve du créateur!",
+    theme: "ADN et le vivant",
+    readTime: "5 min de lecture",
+    summary: "Pendant des décennies, on a affirmé que 98 % de notre ADN ne servait à rien, qualifié d'« ADN poubelle ». Mais les découvertes récentes du projet ENCODE et de l'épigénétique révèlent un réseau d'interrupteurs et de régulateurs d'une sophistication insoupçonnée.",
+    sections: [
+      "Le dogme de l'ADN déchet",
+      "Les 2 % et l'illusion des rebuts",
+      "Le projet ENCODE : le grand tournant",
+      "Des interrupteurs génétiques ultra-précis",
+      "Une prédiction vérifiée du dessein intelligent",
+      "Ma réflexion"
+    ],
+    script: `
+      <p class="article-lead"><em>Pendant des décennies, on a cru que 98 % de notre ADN ne servait à rien, qualifié d'« ADN poubelle ». Mais plus les chercheurs regardent de près, plus ils découvrent des fonctions cachées d'une précision étonnante.</em></p>
+
+      <h2>Le dogme de l'ADN déchet</h2>
+      <p>Dans les années 1970, le généticien Susumu Ohno a popularisé le terme d'« ADN poubelle » (<em>Junk DNA</em>). À l'époque, les scientifiques constataient que seulement 1,5 à 2 % de notre génome code directement pour des protéines. Pour beaucoup de partisans du néodarwinisme, les 98 % restants n'étaient que des cicatrices évolutives, des vestiges sans importance accumulés au fil des âges.</p>
+
+      <h2>Les 2 % et l'illusion des rebuts</h2>
+      <p>Cette vision a longtemps freiné la recherche. Si 98 % de notre manuel d'instructions cellulaire était considéré comme inutile, pourquoi passer des années à l'étudier ? Mais comme l'histoire des sciences l'a souvent montré, qualifier un organe ou une molécule d'« inutile » trahit le plus souvent notre propre ignorance temporaire plutôt qu'une imperfection de la nature.</p>
+
+      <h2>Le projet ENCODE : le grand tournant</h2>
+      <p>Lancé par les National Institutes of Health (NIH) et regroupant plus de 400 chercheurs internationaux, le consortium ENCODE (<em>Encyclopedia of DNA Elements</em>) a séquencé et cartographié l'activité biochimique globale du génome humain.</p>
+      <p>Leurs conclusions ont ébranlé les certitudes : plus de 80 % du génome non codant participe à des fonctions biochimiques actives. Loin d'être une décharge de rebuts, cette portion non codante abrite le système d'exploitation central de la cellule.</p>
+
+      <h2>Des interrupteurs génétiques ultra-précis</h2>
+      <p>L'ADN non codant contient :</p>
+      <ul style="margin-left: 1.5rem; margin-block: 1rem; color: #cbd5e1; line-height: 1.8;">
+        <li><strong>Des promoteurs et des amplificateurs (enhancers)</strong> : véritables interrupteurs moléculaires qui indiquent à chaque gène quand s'allumer, à quel moment précis du développement et dans quel organe.</li>
+        <li><strong>Des micro-ARN et des longs ARN non codants (lncRNA)</strong> : qui régulent la synthèse des protéines et orchestrent les fonctions immunitaires.</li>
+        <li><strong>Des instructions de repliement tridimensionnel</strong> : l'ADN se plie en boucles spécifiques dans le noyau pour mettre en contact physique des régulateurs distants avec leurs gènes cibles.</li>
+      </ul>
+
+      <h2>Une prédiction vérifiée du dessein intelligent</h2>
+      <p>C'est un fait remarquable dans l'histoire des sciences : les théoriciens du dessein intelligent avaient prédit dès la fin des années 1990 que l'« ADN poubelle » se révélerait hautement fonctionnel, car une conception intelligente ne gaspille pas 98 % de son code.</p>
+      <p>La découverte progressive de ses fonctions régulatrices a confirmé cette prédiction avec éclat.</p>
+
+      <h2>Ma réflexion</h2>
+      <p>Ce que nous croyions inutile était simplement ce que nous n'avions pas encore appris à lire. Quand nous ouvrons un logiciel informatique de pointe, le code d'aiguillage et de contrôle représente l'essentiel de l'architecture. Voir un tel niveau de complexité et de coordination au cœur de nos cellules témoigne, selon moi, d'un Génie créateur sans égal.</p>
+    `
+  },
+
   // L'entropie et le départ extraordinaire de l'Univers
   "G7XhpPR3eWI": {
     officialTitle: "L'entropie et le départ extraordinaire de l'Univers",
