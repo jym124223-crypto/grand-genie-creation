@@ -60,15 +60,16 @@ function initNavigation() {
 }
 
 /* ==========================================================================
-   INSCRIPTION INFOLETTRE & RETOUR UTILISATEUR
+   INSCRIPTION INFOLETTRE & RETOUR UTILISATEUR (MailerLite API & Fallback)
    ========================================================================== */
 function initNewsletterForms() {
   const forms = document.querySelectorAll('.newsletter-form');
   
   forms.forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const input = form.querySelector('input[type="email"]');
+      const submitBtn = form.querySelector('button[type="submit"]');
       if (!input) return;
 
       const email = input.value.trim();
@@ -77,15 +78,59 @@ function initNewsletterForms() {
         return;
       }
 
-      // Sauvegarde dans le stockage local (simulation de liste de diffusion)
-      let subscribers = JSON.parse(localStorage.getItem('ggc_subscribers') || '[]');
-      if (!subscribers.includes(email)) {
-        subscribers.push(email);
-        localStorage.setItem('ggc_subscribers', JSON.stringify(subscribers));
+      // Indicateur visuel d'envoi
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Inscription en cours...</span>`;
       }
 
-      showToast(`Merci ! Vous êtes désormais inscrit avec l'adresse : ${email}`, 'success');
-      form.reset();
+      try {
+        const formData = new FormData();
+        formData.append('fields[email]', email);
+        formData.append('ml-submit', '1');
+        formData.append('anticsrf', 'true');
+
+        const response = await fetch('https://assets.mailerlite.com/jsonp/2726780/forms/202688973473056293/subscribe', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        const data = await response.json().catch(() => ({ success: true }));
+
+        if (response.ok && (data.success !== false)) {
+          // Sauvegarde locale
+          let subscribers = JSON.parse(localStorage.getItem('ggc_subscribers') || '[]');
+          if (!subscribers.includes(email)) {
+            subscribers.push(email);
+            localStorage.setItem('ggc_subscribers', JSON.stringify(subscribers));
+          }
+
+          showToast('Bienvenue ! Vos affiches sont prêtes.', 'success');
+          form.reset();
+
+          // Redirection vers la page des affiches offertes
+          setTimeout(() => {
+            window.location.href = '/affiches-telechargement.html';
+          }, 800);
+        } else {
+          const errorMsg = (data.errors && data.errors.fields && data.errors.fields.email)
+            ? data.errors.fields.email[0]
+            : 'Une erreur est survenue lors de l\'inscription.';
+          showToast(errorMsg, 'warning');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+          }
+        }
+      } catch (err) {
+        console.warn('Envoi via fetch indisponible, utilisation du fallback formulaire :', err);
+        // Fallback transparent : soumission directe du formulaire
+        form.submit();
+      }
     });
   });
 }
