@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
+  initSubscriberState();
   initNewsletterForms();
   
   // Routage & Rendu en fonction de la page active
@@ -60,6 +61,66 @@ function initNavigation() {
 }
 
 /* ==========================================================================
+   GESTION DE L'ÉTAT ABONNÉ & MÉMORISATION PERMANENTE
+   ========================================================================== */
+function isUserSubscribed() {
+  return localStorage.getItem('ggc_is_subscribed') === 'true';
+}
+
+function setUserSubscribed(email = null) {
+  localStorage.setItem('ggc_is_subscribed', 'true');
+  if (email) {
+    let subscribers = JSON.parse(localStorage.getItem('ggc_subscribers') || '[]');
+    if (!subscribers.includes(email)) {
+      subscribers.push(email);
+      localStorage.setItem('ggc_subscribers', JSON.stringify(subscribers));
+    }
+  }
+}
+
+function initSubscriberState() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const path = window.location.pathname.toLowerCase();
+
+  // Si le visiteur arrive sur la page privée de téléchargement ou via un lien d'infolettre
+  if (path.includes('affiches-telechargement.html') || urlParams.get('subscriber') || urlParams.get('subscribed')) {
+    setUserSubscribed();
+  }
+
+  // Personnalisation sur infolettre.html si déjà abonné
+  if (path.includes('infolettre.html') && isUserSubscribed()) {
+    const wrapper = document.getElementById('mailerlite-wrapper');
+    if (wrapper) {
+      wrapper.innerHTML = `
+        <div class="subscriber-welcome-card" style="text-align: center; padding: 2.5rem 1.5rem; background: rgba(245, 197, 66, 0.08); border: 1px solid var(--gold-primary); border-radius: var(--radius-md);">
+          <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🎉</div>
+          <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">Vous faites déjà partie de notre communauté !</h2>
+          <p style="color: #cbd5e1; max-width: 520px; margin: 0 auto 1.5rem auto; font-size: 0.95rem; line-height: 1.5;">
+            Votre accès gratuit et illimité à toutes nos affiches haute définition (actuelles et futures) est déjà actif sur cet appareil.
+          </p>
+          <a href="/affiches-telechargement.html" class="btn btn-gold" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.8rem; font-size: 1rem;">
+            <span>Accéder à mes affiches gratuites</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <div style="margin-top: 1.5rem;">
+            <button type="button" id="switch-email-btn" style="background: none; border: none; color: var(--text-dim); font-size: 0.85rem; text-decoration: underline; cursor: pointer;">
+              Inscrire une autre adresse courriel
+            </button>
+          </div>
+        </div>
+      `;
+      document.getElementById('switch-email-btn')?.addEventListener('click', () => {
+        localStorage.removeItem('ggc_is_subscribed');
+        window.location.reload();
+      });
+    }
+  }
+}
+
+/* ==========================================================================
    INSCRIPTION INFOLETTRE & RETOUR UTILISATEUR (MailerLite API & Fallback)
    ========================================================================== */
 function initNewsletterForms() {
@@ -102,12 +163,8 @@ function initNewsletterForms() {
         const data = await response.json().catch(() => ({ success: true }));
 
         if (response.ok && (data.success !== false)) {
-          // Sauvegarde locale
-          let subscribers = JSON.parse(localStorage.getItem('ggc_subscribers') || '[]');
-          if (!subscribers.includes(email)) {
-            subscribers.push(email);
-            localStorage.setItem('ggc_subscribers', JSON.stringify(subscribers));
-          }
+          // Mémorisation permanente de l'abonnement
+          setUserSubscribed(email);
 
           showToast('Bienvenue ! Vos affiches sont prêtes.', 'success');
           form.reset();
@@ -128,7 +185,7 @@ function initNewsletterForms() {
         }
       } catch (err) {
         console.warn('Envoi via fetch indisponible, utilisation du fallback formulaire :', err);
-        // Fallback transparent : soumission directe du formulaire
+        setUserSubscribed(email);
         form.submit();
       }
     });

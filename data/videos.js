@@ -1,8 +1,8 @@
 /**
  * Base de données générée automatiquement lors du build
  * Chaîne : « Le Grand Génie de la Création »
- * Total vidéos : 10
- * Date de génération : 2026-10-31T17:58:20.930Z
+ * Total vidéos : 11
+ * Date de génération : 2026-11-04T17:56:17.212Z
  */
 
 const THEMES = {
@@ -20,7 +20,7 @@ const THEMES = {
     tagline: 'L\'information numérique au cœur de chaque cellule',
     description: 'La molécule d\'ADN, les nanomachines d\'édition et la complexité irréductible des organismes vivants révèlent une densité d\'information qui défie le pur hasard matériel.',
     image: 'assets/images/theme-adn-vivant.jpg',
-    videoCount: 5
+    videoCount: 6
   },
   'physique': {
     id: 'physique',
@@ -42,10 +42,29 @@ const THEMES = {
 
 const VIDEOS = [
   {
+    "id": "le-pilote-automatique-de-notre-cerveau-la-signature-d-un-genie-createu",
+    "slug": "le-pilote-automatique-de-notre-cerveau-la-signature-d-un-genie-createu",
+    "title": "Le pilote automatique de notre cerveau : la signature d'un génie créateur (Épi.1)",
+    "featured": true,
+    "theme": "adn-vivant",
+    "themeLabel": "ADN et le vivant",
+    "youtubeId": "EMjXWXIqdZM",
+    "youtubeUrl": "https://www.youtube.com/watch?v=EMjXWXIqdZM",
+    "summary": "Depuis que tu as commencé cette vidéo, ton cœur a battu une dizaine de fois, tu as respiré, avalé, cligné des yeux… sans rien décider. Alors, qui s'en occupe à notre place ?",
+    "date": "2 Novembre 2026",
+    "datePublished": "2026-11-03T04:50:52+00:00",
+    "readTime": "5 min de lecture",
+    "duration": "PT15M00S",
+    "thumbnail": "https://i2.ytimg.com/vi/EMjXWXIqdZM/hqdefault.jpg",
+    "keyTakeaways": [],
+    "formattedDescription": "Depuis que tu as commencé cette vidéo, ton cœur a battu une dizaine de fois, tu as respiré, avalé, cligné des yeux… sans rien décider. Alors, qui s&#39;en occupe à notre place ?</p><p>Dans ce premier épisode de la série sur le cerveau, on descend dans le tronc cérébral : une structure de la taille d&#39;un pouce qui relie notre esprit à notre corps, nous garde éveillés, nous immobilise quand on rêve, fabrique la sérotonine et la dopamine, et nous fait respirer et battre le cœur jour et nuit. Un centre de commande si précis et si bien coordonné qu&#39;il porte, selon moi, la signature d&#39;un génie créateur.</p><p>Tu vas découvrir :<br>• Le syndrome d&#39;Ondine, une vieille légende devenue le nom d&#39;une vraie maladie<br>• L&#39;histoire de Jean-Dominique Bauby, qui a écrit un livre entier en clignant d&#39;un œil<br>• Les chats de Michel Jouvet, qui vivaient leurs rêves<br>• Le « métronome » de neurones qui crée le rythme de notre respiration<br>• Pourquoi l&#39;envie de respirer vient du gaz carbonique, et non du manque d&#39;oxygène<br>• Comment le tronc cérébral freine et accélère notre cœur<br>• Le rêve d&#39;Otto Loewi qui a mené à la découverte des neurotransmetteurs</p><p>CHAPITRES<br>00:00 Présentation et plan de la vidéo<br>01:14 Introduction : la malédiction d&#39;Ondine<br>02:36 Le centre de commande : le tronc cérébral<br>08:23 Le métronome de la respiration<br>11:14 Le cœur et le rêve d&#39;Otto Loewi<br>14:17 Conclusion : le pilote automatique parfait</p><p>Bonjour, je m&#39;appelle Jean-Yves. Ma passion dans la vie, c&#39;est d&#39;explorer la science pour découvrir les qualités extraordinaires cachées d&#39;un génie créateur.</p><p>Épisode précédent : Le cerveau, l&#39;objet le plus mystérieux de l&#39;univers (épisode 0)<br>Prochain épisode : la chorégraphie du mouvement</p><p>Version écrite et affiches : https://grandcreateur.com</p><p>SOURCES<br>• Smith, Ellenberger, Ballanyi, Richter et Feldman (1991), découverte du complexe pré-Bötzinger, revue Science<br>• Amiel et coll. (2003), mutations du gène PHOX2B dans le syndrome d&#39;Ondine, revue Nature Genetics<br>• Dubreuil et coll. (2008), PHOX2B et le noyau rétrotrapézoïde chez la souris, PNAS<br>��� Michel Jouvet (1959), découverte du sommeil paradoxal, Lyon<br>• Jean-Dominique Bauby (1997), Le Scaphandre et le Papillon<br>• Otto Loewi (1921), transmission chimique de l&#39;influx nerveux au cœur ; prix Nobel de médecine 1936, partagé avec Henry Dale</p><p>#cerveau #neurosciences #desseinintelligent",
+    "content": ""
+  },
+  {
     "id": "le-cerveau-la-structure-la-plus-complexe-de-l-univers-preuve-d-un-crea",
     "slug": "le-cerveau-la-structure-la-plus-complexe-de-l-univers-preuve-d-un-crea",
-    "title": "Le cerveau : la structure la plus complexe de l'univers - Preuve d'un créateur !",
-    "featured": true,
+    "title": "Le cerveau : la structure la plus complexe de l'univers - Preuve d'un créateur !(Épi.0)",
+    "featured": false,
     "theme": "adn-vivant",
     "themeLabel": "ADN et le vivant",
     "youtubeId": "-9_0q2KAce8",
@@ -57,7 +76,7 @@ const VIDEOS = [
     "duration": "PT15M00S",
     "thumbnail": "https://i2.ytimg.com/vi/-9_0q2KAce8/hqdefault.jpg",
     "keyTakeaways": [],
-    "formattedDescription": "Posez la main sur le haut de votre tête. Juste en dessous, il y a 1,5 kg de matière molle qui consomme 20 % de votre énergie… et qui vous permet de lire ces mots.</p><p>00:00 - Introduction<br>00:26 - Chapitre 1 : Préambule<br>02:46 - Chapitre 2 : Un organe merveilleux<br>06:12 - Chapitre 3 : Ceux qui ont ouvert le cerveau<br>08:30 - Chapitre 4 : Le mystère de la conscience<br>10:58 - Conclusion : La signature d&#39;un Génie créateur</p><p>Dans ce premier épisode de la série sur le cerveau, on ouvre le capot :<br>🧠 Les 86 milliards de neurones et les cellules gliales<br>⚡ Comment un neurone envoie un message électrique à plus de 400 km/h<br>🔑 La synapse, là où tout se décide<br>🗺️ La carte du cerveau, quartier par quartier<br>��� Le tout alimenté par seulement 20 watts</p><p>Dans les dix prochains épisodes, on explore le cerveau région par région : le pilote automatique, le mouvement, les sens, la mémoire, les émotions, le langage, la conscience, l&#39;empathie, le sommeil et la capacité du cerveau à se transformer.</p><p>Ma passion, c&#39;est d&#39;explorer la science pour découvrir les qualités extraordinaires cachées d&#39;un génie créateur.</p><p>🌐 Version écrite et posters : https://grandcreateur.com<br>🔔 Abonnez-vous pour ne pas manquer l&#39;épisode 1 : Le pilote automatique parfait.</p><p>#cerveau #neurosciences #dessein intelligent",
+    "formattedDescription": "Posez la main sur le haut de votre tête. Juste en dessous, il y a 1,5 kg de matière molle qui consomme 20 % de votre énergie… et qui vous permet de lire ces mots.</p><p>00:00 - Introduction<br>00:26 - Chapitre 1 : Préambule<br>02:46 - Chapitre 2 : Un organe merveilleux<br>06:12 - Chapitre 3 : Ceux qui ont ouvert le cerveau<br>08:30 - Chapitre 4 : Le mystère de la conscience<br>10:58 - Conclusion : La signature d&#39;un Génie créateur</p><p>Dans ce premier épisode de la série sur le cerveau, on ouvre le capot :<br>🧠 Les 86 milliards de neurones et les cellules gliales<br>⚡ Comment un neurone envoie un message électrique à plus de 400 km/h<br>🔑 La synapse, là où tout se décide<br>🗺️ La carte du cerveau, quartier par quartier<br>💡 Le tout alimenté par seulement 20 watts</p><p>Dans les dix prochains épisodes, on explore le cerveau région par région : le pilote automatique, le mouvement, les sens, la mémoire, les émotions, le langage, la conscience, l&#39;empathie, le sommeil et la capacité du cerveau à se transformer.</p><p>Ma passion, c&#39;est d&#39;explorer la science pour découvrir les qualités extraordinaires cachées d&#39;un génie créateur.</p><p>🌐 Version écrite et posters : https://grandcreateur.com<br>🔔 Abonnez-vous pour ne pas manquer l&#39;épisode 1 : Le pilote automatique parfait.</p><p>#cerveau #neurosciences #dessein intelligent",
     "content": ""
   },
   {
@@ -246,7 +265,7 @@ const VIDEOS = [
       "La complexité irréductible",
       "Ma réflexion"
     ],
-    "formattedDescription": "Aujourd&#39;hui, je vous emmène à l&#39;échelle nanoscopique pour découvrir 3 machines moléculaires tellement parfaites et complexes qu&#39;il est impossible, selon moi, de les attribuer au simple hasard aveugle.</p><p>Au programme de cette exploration scientifique et philosophique :<br>🔹 La Kinésine : Le robot de livraison autonome qui &amp;quot;marche&amp;quot; sur des autoroutes cellulaires.<br>🔹 La mitochondrie et ATP Synthase : Une turbine hydroélectrique tournant à 9 000 tours/min avec un rendement frôlant les 100 %.<br>🔹 Le Moteur Flagellaire : Un véritable moteur hors-bord bactérien qui illustre parfaitement la &amp;quot;complexité irréductible&amp;quot;.</p><p>Face à un tel niveau d&#39;ingénierie, sommes-nous le fruit d&#39;un accident génétique ou l&#39;œuvre d&#39;un &amp;quot;Grand Génie de la Création&amp;quot; ?",
+    "formattedDescription": "Aujourd&#39;hui, je vous emmène �� l&#39;échelle nanoscopique pour découvrir 3 machines moléculaires tellement parfaites et complexes qu&#39;il est impossible, selon moi, de les attribuer au simple hasard aveugle.</p><p>Au programme de cette exploration scientifique et philosophique :<br>🔹 La Kinésine : Le robot de livraison autonome qui &amp;quot;marche&amp;quot; sur des autoroutes cellulaires.<br>🔹 La mitochondrie et ATP Synthase : Une turbine hydroélectrique tournant à 9 000 tours/min avec un rendement frôlant les 100 %.<br>🔹 Le Moteur Flagellaire : Un véritable moteur hors-bord bactérien qui illustre parfaitement la &amp;quot;complexité irréductible&amp;quot;.</p><p>Face à un tel niveau d&#39;ingénierie, sommes-nous le fruit d&#39;un accident génétique ou l&#39;œuvre d&#39;un &amp;quot;Grand Génie de la Création&amp;quot; ?",
     "content": "\n      <p class=\"article-lead\"><em>Des moteurs, des turbines, des transporteurs qui marchent : ce n'est pas de la science-fiction. Ces machines fonctionnent en ce moment même, par millions, à l'intérieur de votre corps.</em></p>\n\n      <h2>Une usine de haute technologie</h2>\n      <p>La cellule humaine ressemble à une usine. On y trouve un centre d'information, l'ADN, qui contient les instructions pour bâtir et entretenir un être vivant. Et on y trouve des machines moléculaires : des assemblages de protéines avec des pièces mobiles, des moteurs et des rotors. En voici trois.</p>\n\n      <h2>Machine numéro 1 : la kinésine, le transporteur</h2>\n      <p>Imaginez une métropole où il faut livrer du matériel d'un point à un autre en permanence. Dans la cellule, ce travail est fait par la kinésine.</p>\n      <p>Elle saisit une cargaison, souvent bien plus grosse qu'elle, et la transporte en marchant, littéralement. Elle possède deux petites « jambes » qui avancent l'une après l'autre sur des routes cellulaires appelées microtubules. Chaque pas mesure 8 nanomètres, et chaque pas consomme une molécule d'énergie.</p>\n      <p>À notre échelle, ce serait comme un coureur portant un sac à dos énorme, qui sait exactement où livrer son chargement sans jamais se perdre.</p>\n\n      <h2>Machine numéro 2 : la mitochondrie et sa turbine</h2>\n      <p>Chacune de nos cellules possède ses petites centrales électriques : les mitochondries. Elles transforment ce que nous mangeons en une énergie que la cellule peut utiliser, l'ATP. On peut voir l'ATP comme une petite batterie rechargeable.</p>\n      <p>Pour comprendre comment elle est fabriquée, pensez à un barrage hydroélectrique. Derrière le mur, l'eau s'accumule. Cette différence de niveau est une réserve d'énergie.</p>\n      <p>Dans la mitochondrie, l'énergie de nos aliments sert à pomper des protons d'un côté d'une membrane. On crée ainsi un réservoir de protons. Ces protons veulent revenir de l'autre côté, mais ils ne peuvent passer que par une porte : l'ATP synthase. En la traversant, ils la font tourner comme l'eau fait tourner la turbine d'un barrage. Et cette rotation sert à fabriquer l'ATP.</p>\n      <p>Cette énergie alimente ensuite tout notre corps : nos muscles, nos cellules, la réparation de nos tissus. Ce qui frappe, c'est l'organisation du système entier, où chaque étape prépare la suivante.</p>\n\n      <h2>Machine numéro 3 : le moteur flagellaire, le propulseur</h2>\n      <p>Certaines bactéries se déplacent grâce à un long filament, le flagelle. Ce filament n'ondule pas au hasard : il est attaché à un véritable moteur rotatif.</p>\n      <p>Ce moteur est construit avec une quarantaine de types de pièces protéiques. Il possède un stator, un rotor, un arbre de transmission et une sorte de joint universel qui relie le moteur à l'hélice. Chez certaines bactéries, il peut tourner jusqu'à 100 000 tours par minute, et il peut changer de sens de rotation en une fraction de seconde.</p>\n\n      <h2>La complexité irréductible</h2>\n      <p>C'est ici qu'intervient un argument central du dessein intelligent : la complexité irréductible. Retirez une seule pièce essentielle de ce moteur, et il ne tourne pas moins vite. Il ne fonctionne plus du tout.</p>\n      <p>D'où une question : comment un tel système aurait-il pu s'assembler par une lente série d'accidents, s'il n'apporte aucun avantage avant d'être complet ?</p>\n\n      <h2>Ma réflexion</h2>\n      <p>Des transporteurs qui marchent, des turbines, des moteurs d'une précision inouïe. Devant une telle complexité, j'ai la conviction profonde que nous observons l'œuvre d'un Créateur à l'intelligence immense.</p>\n    "
   },
   {

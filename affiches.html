@@ -233,6 +233,29 @@
   <script>
     // Gestion de la modale de téléchargement et rendu dynamique
     function openDownloadModal(posterId) {
+      // 1. Si déjà abonné : Téléchargement direct sans demander l'e-mail
+      if (typeof isUserSubscribed === 'function' && isUserSubscribed()) {
+        let poster = null;
+        if (typeof AFFICHES !== 'undefined' && Array.isArray(AFFICHES)) {
+          poster = AFFICHES.find(a => a.id === posterId);
+        }
+        if (poster && poster.pdfFile) {
+          const dlLink = document.createElement('a');
+          dlLink.href = poster.pdfFile;
+          dlLink.download = poster.pdfFile.split('/').pop();
+          document.body.appendChild(dlLink);
+          dlLink.click();
+          dlLink.remove();
+          if (typeof showToast === 'function') {
+            showToast(`Téléchargement lancé : ${poster.title}`, 'success');
+          }
+          return;
+        }
+        window.location.href = '/affiches-telechargement.html';
+        return;
+      }
+
+      // 2. Si pas encore abonné : ouvrir la modale d'inscription MailerLite
       const modal = document.getElementById('download-modal');
       if (!modal) return;
 
@@ -273,10 +296,33 @@
       if (e.target.id === 'download-modal') closeDownloadModal();
     });
 
-    // Rendu dynamique si affiches additionnelles déclarées dans data/affiches.js
+    // Rendu dynamique et affichage du statut abonné
     document.addEventListener('DOMContentLoaded', () => {
+      const isSub = (typeof isUserSubscribed === 'function' && isUserSubscribed());
+      const mount = document.getElementById('posters-mount');
+
+      // Afficher un bandeau VIP si déjà abonné
+      if (isSub && mount) {
+        const banner = document.createElement('div');
+        banner.className = 'subscriber-vip-banner';
+        banner.style.cssText = 'background: rgba(245, 197, 66, 0.08); border: 1px solid var(--gold-primary); border-radius: var(--radius-md); padding: 1.25rem 1.75rem; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;';
+        banner.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 0.85rem;">
+            <span style="font-size: 1.6rem;">⭐</span>
+            <div>
+              <div style="color: #fff; font-weight: 700; font-size: 1.05rem;">Accès Abonné Débloqué</div>
+              <div style="color: #cbd5e1; font-size: 0.9rem;">Votre appareil est reconnu. Téléchargez directement chaque affiche en 1 clic sans retaper votre courriel.</div>
+            </div>
+          </div>
+          <a href="/affiches-telechargement.html" class="btn btn-gold" style="font-size: 0.85rem; padding: 0.55rem 1.1rem; white-space: nowrap;">
+            Espace de téléchargement complet →
+          </a>
+        `;
+        mount.parentNode.insertBefore(banner, mount);
+      }
+
+      // Rendu dynamique des affiches
       if (typeof AFFICHES !== 'undefined' && Array.isArray(AFFICHES) && AFFICHES.length > 0) {
-        const mount = document.getElementById('posters-mount');
         if (!mount) return;
 
         mount.innerHTML = AFFICHES.map(a => `
@@ -298,7 +344,7 @@
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
-                <span>Télécharger</span>
+                <span>${isSub ? 'Télécharger le PDF HD' : 'Télécharger'}</span>
               </button>
             </div>
           </article>
